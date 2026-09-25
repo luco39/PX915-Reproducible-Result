@@ -1,0 +1,1148 @@
+2026-09-02 23:28:50.517 INFO: ===========VERIFYING SETTINGS===========
+2026-09-02 23:28:50.517 INFO: Stage Two is activated as start_stage_two was defined
+2026-09-02 23:28:50.517 WARNING: start_stage_two must be less than max_num_epochs, got 501 > 500
+2026-09-02 23:28:50.517 WARNING: Stage Two will not start, as start_stage_two > max_num_epochs
+2026-09-02 23:28:50.517 INFO: MACE version: 0.3.16
+2026-09-02 23:28:50.518 DEBUG: Configuration: Namespace(config='/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/config.yml', name='invariant16_05', seed=59663, work_dir='.', log_dir='/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/logs', model_dir='/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/model', checkpoints_dir='/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints', results_dir='/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/results', downloads_dir='./downloads', device='cuda', default_dtype='float32', distributed=False, launcher='slurm', log_level='INFO', plot=True, plot_frequency=0, plot_interaction_e=False, error_table='PerAtomRMSE', model='MACE', r_max=5.0, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', apply_cutoff=True, use_last_readout_only=False, use_embedding_readout=False, interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, use_reduced_cg=False, use_so3=False, use_agnostic_product=False, num_interactions=2, MLP_irreps='16x0e', radial_MLP='[64, 64, 64]', hidden_irreps='32x0e', edge_irreps=None, use_edge_irreps_first=False, num_channels=32, max_L=0, gate='silu', kspace_cutoff_factor=1.5, atomic_multipoles_max_l=0, atomic_multipoles_smearing_width=1.0, field_feature_max_l=0, field_feature_widths='[1.0]', field_feature_norms=None, num_recursion_steps=1, field_si=False, include_electrostatic_self_interaction=False, add_local_electron_energy=False, quadrupole_feature_corrections=False, return_electrostatic_potentials=False, field_norm_factor=0.02, fixedpoint_update_config=None, field_readout_config=None, scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=True, compute_polarizability=False, compute_atomic_dipole=False, train_file='/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/data/train.xyz', valid_file='/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/data/valid.xyz', valid_fraction=0.1, test_file=None, test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers='[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 26, 29, 30, 35, 53]', mean=None, std=None, statistics_file=None, les_arguments=None, E0s='{1: -13.44479871561175, 2: -78.82026497397555, 3: -203.32889490923526, 4: -398.9476678874043, 5: -670.7505467717353, 6: -1029.852812546429, 7: -1485.5394904484108, 8: -2042.975987335815, 9: -2714.2417581011205, 10: -3508.7436184608446, 11: -4415.242408190776, 12: -5443.898798172279, 13: -6594.619151072571, 14: -7873.684872727564, 15: -9285.660884444838, 16: -10832.622086200296, 17: -12520.671203385575, 18: -14354.28030489181, 19: -16323.546294804388, 20: -18436.482948520596, 26: -34384.00563450578, 29: -44637.392129868334, 30: -48417.153705836645, 35: -70041.25095534947, 53: -8099.879137037657}', pseudolabel_replay=False, pseudolabel_replay_compute_stress=False, foundation_filter_elements=True, heads=None, multiheads_finetuning=True, foundation_head=None, weight_pt_head=1.0, real_pt_data_ratio_threshold=0.1, num_samples_pt=10000, force_mh_ft_lr=False, subselect_pt='random', filter_type_pt='none', allow_random_padding_pt=True, pt_train_file=None, pt_valid_file=None, foundation_model_elements=False, keep_isolated_atoms=False, lora=False, lora_rank=4, lora_alpha=1.0, energy_key='TotEnergy', forces_key='force', virials_key='REF_virials', stress_key='REF_stress', dipole_key='dipole', polarizability_key='polarizability', head_key='head', charges_key='REF_charges', elec_temp_key='elec_temp', total_spin_key='total_spin', total_charge_key='total_charge', embedding_specs=None, skip_evaluate_heads='pt_head', loss='weighted', forces_weight=100.0, swa_forces_weight=100.0, energy_weight=1.0, swa_energy_weight=500.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipole_weight=1.0, swa_dipole_weight=1.0, swa_polarizability_weight=1.0, polarizability_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, beta1_schedulefree=0.9, beta2_schedulefree=0.98, batch_size=4, valid_batch_size=11, lr=0.01, swa_lr=0.001, weight_decay=1e-06, lr_params_factors='{"embedding_lr_factor": 1.0, "interactions_lr_factor": 1.0, "products_lr_factor": 1.0, "readouts_lr_factor": 1.0}', freeze=None, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=False, start_swa=501, lbfgs=False, ema=True, ema_decay=0.99, max_num_epochs=500, patience=500, foundation_model=None, foundation_model_kwargs='{}', foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=False, save_cpu=False, clip_grad=10.0, dry_run=False, enable_cueq=False, only_cueq=False, enable_oeq=False, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'], key_specification=KeySpecification(info_keys={'energy': 'TotEnergy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'force', 'charges': 'REF_charges'}))
+2026-09-02 23:28:50.584 INFO: CUDA version: 12.6, CUDA device: 0
+2026-09-02 23:28:50.617 DEBUG: Popen(['git', 'version'], cwd=/gpfs/home/l/lbelzko/summer_project/active_learning_pipeline/benchmark, stdin=None, shell=False, universal_newlines=False)
+2026-09-02 23:28:50.626 DEBUG: Popen(['git', 'version'], cwd=/gpfs/home/l/lbelzko/summer_project/active_learning_pipeline/benchmark, stdin=None, shell=False, universal_newlines=False)
+2026-09-02 23:28:50.636 DEBUG: sys.platform='linux', git_executable='git'
+2026-09-02 23:28:50.636 DEBUG: Error accessing Git repository: /gpfs/home/l/lbelzko/summer_project/active_learning_pipeline/benchmark
+2026-09-02 23:28:50.636 INFO: ===========LOADING INPUT DATA===========
+2026-09-02 23:28:50.636 INFO: Using heads: ['Default']
+2026-09-02 23:28:50.636 INFO: Using the key specifications to parse data:
+2026-09-02 23:28:50.636 INFO: Default: KeySpecification(info_keys={'energy': 'TotEnergy', 'stress': 'REF_stress', 'virials': 'REF_virials', 'dipole': 'dipole', 'head': 'head', 'elec_temp': 'elec_temp', 'total_charge': 'total_charge', 'polarizability': 'polarizability', 'total_spin': 'total_spin'}, arrays_keys={'forces': 'force', 'charges': 'REF_charges'})
+2026-09-02 23:28:50.636 INFO: =============    Processing head Default     ===========
+2026-09-02 23:28:50.637 DEBUG: Loading training file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/data/train.xyz
+2026-09-02 23:28:50.769 INFO: Training set 1/1 [energy: 206, stress: 0, virials: 0, dipole components: 0, head: 206, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 206, charges: 0]
+2026-09-02 23:28:50.770 INFO: Total Training set [energy: 206, stress: 0, virials: 0, dipole components: 0, head: 206, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 206, charges: 0]
+2026-09-02 23:28:50.790 INFO: Validation set 1/1 [energy: 11, stress: 0, virials: 0, dipole components: 0, head: 11, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 11, charges: 0]
+2026-09-02 23:28:50.790 INFO: Total Validation set [energy: 11, stress: 0, virials: 0, dipole components: 0, head: 11, elec_temp: 0, total_charge: 0, polarizability: 0, total_spin: 0, forces: 11, charges: 0]
+2026-09-02 23:28:50.790 INFO: Total number of configurations: train=206, valid=11, tests=[],
+2026-09-02 23:28:50.791 INFO: Using atomic numbers from command line argument
+2026-09-02 23:28:50.791 INFO: Atomic Numbers used: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 26, 29, 30, 35, 53]
+2026-09-02 23:28:50.791 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2026-09-02 23:28:50.791 INFO: Atomic Energies used (z: eV) for head Default: {1: -13.44479871561175, 2: -78.82026497397555, 3: -203.32889490923526, 4: -398.9476678874043, 5: -670.7505467717353, 6: -1029.852812546429, 7: -1485.5394904484108, 8: -2042.975987335815, 9: -2714.2417581011205, 10: -3508.7436184608446, 11: -4415.242408190776, 12: -5443.898798172279, 13: -6594.619151072571, 14: -7873.684872727564, 15: -9285.660884444838, 16: -10832.622086200296, 17: -12520.671203385575, 18: -14354.28030489181, 19: -16323.546294804388, 20: -18436.482948520596, 26: -34384.00563450578, 29: -44637.392129868334, 30: -48417.153705836645, 35: -70041.25095534947, 53: -8099.879137037657}
+2026-09-02 23:28:50.791 INFO: Processing datasets for head 'Default'
+2026-09-02 23:28:50.963 DEBUG: Successfully loaded dataset from ASE files: ['/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/data/train.xyz']
+2026-09-02 23:28:50.963 INFO: Combining 1 list datasets for head 'Default'
+2026-09-02 23:28:50.972 DEBUG: Successfully loaded validation dataset from ASE files: ['/home/l/lbelzko/summer_project/benchmark_runs/1564559_10/data/valid.xyz']
+2026-09-02 23:28:50.972 INFO: Combining 1 list datasets for head 'Default_valid'
+2026-09-02 23:28:50.973 INFO: Combined validation datasets for Default
+2026-09-02 23:28:50.973 INFO: Head 'Default' training dataset size: 206
+2026-09-02 23:28:50.974 INFO: Computing average number of neighbors
+2026-09-02 23:28:51.261 INFO: Average number of neighbors: 21.39613151550293
+2026-09-02 23:28:51.261 INFO: During training the following quantities will be reported: energy, forces
+2026-09-02 23:28:51.261 INFO: ===========MODEL DETAILS===========
+2026-09-02 23:28:51.403 INFO: Building model
+2026-09-02 23:28:51.404 INFO: Message passing with 32 channels and max_L=0 (32x0e)
+2026-09-02 23:28:51.404 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2026-09-02 23:28:51.404 INFO: 8 radial and 5 basis functions
+2026-09-02 23:28:51.404 INFO: Radial cutoff: 5.0 A (total receptive field for each atom: 10.0 A)
+2026-09-02 23:28:51.404 INFO: Distance transform for radial basis functions: None
+2026-09-02 23:28:51.404 INFO: Hidden irreps: 32x0e
+2026-09-02 23:28:52.400 INFO: ===========OPTIMIZER INFORMATION===========
+2026-09-02 23:28:52.400 INFO: Using ADAM as parameter optimizer
+2026-09-02 23:28:52.400 INFO: Batch size: 4
+2026-09-02 23:28:52.401 INFO: Using Exponential Moving Average with decay: 0.99
+2026-09-02 23:28:52.401 INFO: Number of gradient updates: 25750
+2026-09-02 23:28:52.401 INFO: Learning rate: 0.01, weight decay: 1e-06
+2026-09-02 23:28:52.401 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=100.000)
+2026-09-02 23:28:52.401 INFO: === Layer's learning rates ===
+2026-09-02 23:28:52.402 INFO: Param group 0: lr = 0.01
+2026-09-02 23:28:52.402 INFO: Param group 1: lr = 0.01
+2026-09-02 23:28:52.402 INFO: Param group 2: lr = 0.01
+2026-09-02 23:28:52.402 INFO: Param group 3: lr = 0.01
+2026-09-02 23:28:52.402 INFO: Param group 4: lr = 0.01
+2026-09-02 23:28:52.403 INFO: Using gradient clipping with tolerance=10.000
+2026-09-02 23:28:52.403 INFO: 
+2026-09-02 23:28:52.403 INFO: ===========TRAINING===========
+2026-09-02 23:28:52.403 INFO: Started training, reporting errors on validation set
+2026-09-02 23:28:52.403 INFO: Loss metrics on validation set
+2026-09-02 23:28:53.476 INFO: Initial: head: Default, loss=2.58481383, RMSE_E_per_atom= 5004.55 meV, RMSE_F=  184.05 meV / A
+2026-09-02 23:29:01.715 INFO: Epoch 0: head: Default, loss=1.24475217, RMSE_E_per_atom= 2485.95 meV, RMSE_F=  274.09 meV / A
+2026-09-02 23:29:01.716 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-0.pt
+2026-09-02 23:29:05.043 INFO: Epoch 1: head: Default, loss=0.39681616, RMSE_E_per_atom=  484.52 meV, RMSE_F=  203.23 meV / A
+2026-09-02 23:29:05.044 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-0.pt
+2026-09-02 23:29:05.045 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-1.pt
+2026-09-02 23:29:07.929 INFO: Epoch 2: head: Default, loss=0.30148548, RMSE_E_per_atom=  114.60 meV, RMSE_F=  181.75 meV / A
+2026-09-02 23:29:07.931 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-1.pt
+2026-09-02 23:29:07.931 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-2.pt
+2026-09-02 23:29:10.814 INFO: Epoch 3: head: Default, loss=0.25356099, RMSE_E_per_atom=   87.86 meV, RMSE_F=  166.78 meV / A
+2026-09-02 23:29:10.816 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-2.pt
+2026-09-02 23:29:10.816 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-3.pt
+2026-09-02 23:29:13.702 INFO: Epoch 4: head: Default, loss=0.21226168, RMSE_E_per_atom=   52.51 meV, RMSE_F=  152.71 meV / A
+2026-09-02 23:29:13.704 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-3.pt
+2026-09-02 23:29:13.704 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-4.pt
+2026-09-02 23:29:16.590 INFO: Epoch 5: head: Default, loss=0.17530471, RMSE_E_per_atom=   34.59 meV, RMSE_F=  138.82 meV / A
+2026-09-02 23:29:16.592 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-4.pt
+2026-09-02 23:29:16.592 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-5.pt
+2026-09-02 23:29:19.477 INFO: Epoch 6: head: Default, loss=0.14965771, RMSE_E_per_atom=   15.07 meV, RMSE_F=  128.30 meV / A
+2026-09-02 23:29:19.478 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-5.pt
+2026-09-02 23:29:19.479 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-6.pt
+2026-09-02 23:29:22.364 INFO: Epoch 7: head: Default, loss=0.13235682, RMSE_E_per_atom=   26.35 meV, RMSE_F=  120.63 meV / A
+2026-09-02 23:29:22.365 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-6.pt
+2026-09-02 23:29:22.366 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-7.pt
+2026-09-02 23:29:25.252 INFO: Epoch 8: head: Default, loss=0.12563397, RMSE_E_per_atom=   35.21 meV, RMSE_F=  117.50 meV / A
+2026-09-02 23:29:25.254 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-7.pt
+2026-09-02 23:29:25.254 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-8.pt
+2026-09-02 23:29:28.128 INFO: Epoch 9: head: Default, loss=0.11512482, RMSE_E_per_atom=   18.25 meV, RMSE_F=  112.52 meV / A
+2026-09-02 23:29:28.130 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-8.pt
+2026-09-02 23:29:28.130 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-9.pt
+2026-09-02 23:29:30.938 INFO: Epoch 10: head: Default, loss=0.10826487, RMSE_E_per_atom=   18.99 meV, RMSE_F=  109.11 meV / A
+2026-09-02 23:29:30.940 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-9.pt
+2026-09-02 23:29:30.940 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-10.pt
+2026-09-02 23:29:33.739 INFO: Epoch 11: head: Default, loss=0.10180657, RMSE_E_per_atom=   18.97 meV, RMSE_F=  105.81 meV / A
+2026-09-02 23:29:33.741 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-10.pt
+2026-09-02 23:29:33.741 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-11.pt
+2026-09-02 23:29:36.546 INFO: Epoch 12: head: Default, loss=0.09276494, RMSE_E_per_atom=    8.74 meV, RMSE_F=  101.01 meV / A
+2026-09-02 23:29:36.547 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-11.pt
+2026-09-02 23:29:36.548 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-12.pt
+2026-09-02 23:29:39.353 INFO: Epoch 13: head: Default, loss=0.08694035, RMSE_E_per_atom=   13.20 meV, RMSE_F=   97.78 meV / A
+2026-09-02 23:29:39.355 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-12.pt
+2026-09-02 23:29:39.355 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-13.pt
+2026-09-02 23:29:42.160 INFO: Epoch 14: head: Default, loss=0.08150605, RMSE_E_per_atom=    6.72 meV, RMSE_F=   94.68 meV / A
+2026-09-02 23:29:42.162 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-13.pt
+2026-09-02 23:29:42.162 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-14.pt
+2026-09-02 23:29:44.971 INFO: Epoch 15: head: Default, loss=0.07560336, RMSE_E_per_atom=    6.36 meV, RMSE_F=   91.19 meV / A
+2026-09-02 23:29:44.972 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-14.pt
+2026-09-02 23:29:44.973 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-15.pt
+2026-09-02 23:29:47.776 INFO: Epoch 16: head: Default, loss=0.07101120, RMSE_E_per_atom=   13.18 meV, RMSE_F=   88.37 meV / A
+2026-09-02 23:29:47.778 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-15.pt
+2026-09-02 23:29:47.778 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-16.pt
+2026-09-02 23:29:50.577 INFO: Epoch 17: head: Default, loss=0.06699556, RMSE_E_per_atom=    5.75 meV, RMSE_F=   85.84 meV / A
+2026-09-02 23:29:50.579 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-16.pt
+2026-09-02 23:29:50.579 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-17.pt
+2026-09-02 23:29:53.382 INFO: Epoch 18: head: Default, loss=0.06269853, RMSE_E_per_atom=    8.37 meV, RMSE_F=   83.04 meV / A
+2026-09-02 23:29:53.384 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-17.pt
+2026-09-02 23:29:53.384 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-18.pt
+2026-09-02 23:29:56.176 INFO: Epoch 19: head: Default, loss=0.05938142, RMSE_E_per_atom=   10.23 meV, RMSE_F=   80.81 meV / A
+2026-09-02 23:29:56.177 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-18.pt
+2026-09-02 23:29:56.178 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-19.pt
+2026-09-02 23:29:58.977 INFO: Epoch 20: head: Default, loss=0.05507322, RMSE_E_per_atom=    5.35 meV, RMSE_F=   77.83 meV / A
+2026-09-02 23:29:58.978 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-19.pt
+2026-09-02 23:29:58.979 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-20.pt
+2026-09-02 23:30:01.772 INFO: Epoch 21: head: Default, loss=0.05170877, RMSE_E_per_atom=    5.60 meV, RMSE_F=   75.42 meV / A
+2026-09-02 23:30:01.774 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-20.pt
+2026-09-02 23:30:01.774 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-21.pt
+2026-09-02 23:30:04.564 INFO: Epoch 22: head: Default, loss=0.04903292, RMSE_E_per_atom=    4.98 meV, RMSE_F=   73.44 meV / A
+2026-09-02 23:30:04.566 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-21.pt
+2026-09-02 23:30:04.566 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-22.pt
+2026-09-02 23:30:07.366 INFO: Epoch 23: head: Default, loss=0.04810514, RMSE_E_per_atom=    6.54 meV, RMSE_F=   72.74 meV / A
+2026-09-02 23:30:07.367 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-22.pt
+2026-09-02 23:30:07.367 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-23.pt
+2026-09-02 23:30:10.161 INFO: Epoch 24: head: Default, loss=0.04538434, RMSE_E_per_atom=    5.55 meV, RMSE_F=   70.65 meV / A
+2026-09-02 23:30:10.163 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-23.pt
+2026-09-02 23:30:10.163 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-24.pt
+2026-09-02 23:30:12.968 INFO: Epoch 25: head: Default, loss=0.04271819, RMSE_E_per_atom=    4.50 meV, RMSE_F=   68.55 meV / A
+2026-09-02 23:30:12.970 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-24.pt
+2026-09-02 23:30:12.970 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-25.pt
+2026-09-02 23:30:15.783 INFO: Epoch 26: head: Default, loss=0.04158427, RMSE_E_per_atom=    8.50 meV, RMSE_F=   67.63 meV / A
+2026-09-02 23:30:15.785 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-25.pt
+2026-09-02 23:30:15.785 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-26.pt
+2026-09-02 23:30:18.598 INFO: Epoch 27: head: Default, loss=0.03941649, RMSE_E_per_atom=    8.23 meV, RMSE_F=   65.84 meV / A
+2026-09-02 23:30:18.599 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-26.pt
+2026-09-02 23:30:18.600 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-27.pt
+2026-09-02 23:30:21.401 INFO: Epoch 28: head: Default, loss=0.03770292, RMSE_E_per_atom=    3.93 meV, RMSE_F=   64.40 meV / A
+2026-09-02 23:30:21.403 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-27.pt
+2026-09-02 23:30:21.403 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-28.pt
+2026-09-02 23:30:24.206 INFO: Epoch 29: head: Default, loss=0.03509627, RMSE_E_per_atom=    5.21 meV, RMSE_F=   62.13 meV / A
+2026-09-02 23:30:24.207 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-28.pt
+2026-09-02 23:30:24.208 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-29.pt
+2026-09-02 23:30:27.015 INFO: Epoch 30: head: Default, loss=0.03389892, RMSE_E_per_atom=    4.69 meV, RMSE_F=   61.06 meV / A
+2026-09-02 23:30:27.016 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-29.pt
+2026-09-02 23:30:27.017 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-30.pt
+2026-09-02 23:30:29.824 INFO: Epoch 31: head: Default, loss=0.03204025, RMSE_E_per_atom=    3.65 meV, RMSE_F=   59.37 meV / A
+2026-09-02 23:30:29.825 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-30.pt
+2026-09-02 23:30:29.826 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-31.pt
+2026-09-02 23:30:32.632 INFO: Epoch 32: head: Default, loss=0.03141131, RMSE_E_per_atom=    7.01 meV, RMSE_F=   58.78 meV / A
+2026-09-02 23:30:32.634 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-31.pt
+2026-09-02 23:30:32.634 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-32.pt
+2026-09-02 23:30:35.443 INFO: Epoch 33: head: Default, loss=0.02990793, RMSE_E_per_atom=    5.27 meV, RMSE_F=   57.35 meV / A
+2026-09-02 23:30:35.445 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-32.pt
+2026-09-02 23:30:35.445 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-33.pt
+2026-09-02 23:30:38.251 INFO: Epoch 34: head: Default, loss=0.02841999, RMSE_E_per_atom=    3.72 meV, RMSE_F=   55.91 meV / A
+2026-09-02 23:30:38.253 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-33.pt
+2026-09-02 23:30:38.253 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-34.pt
+2026-09-02 23:30:41.052 INFO: Epoch 35: head: Default, loss=0.02690617, RMSE_E_per_atom=    3.41 meV, RMSE_F=   54.40 meV / A
+2026-09-02 23:30:41.053 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-34.pt
+2026-09-02 23:30:41.054 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-35.pt
+2026-09-02 23:30:43.856 INFO: Epoch 36: head: Default, loss=0.02595050, RMSE_E_per_atom=    3.50 meV, RMSE_F=   53.43 meV / A
+2026-09-02 23:30:43.858 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-35.pt
+2026-09-02 23:30:43.858 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-36.pt
+2026-09-02 23:30:46.670 INFO: Epoch 37: head: Default, loss=0.02446953, RMSE_E_per_atom=    3.34 meV, RMSE_F=   51.88 meV / A
+2026-09-02 23:30:46.671 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-36.pt
+2026-09-02 23:30:46.672 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-37.pt
+2026-09-02 23:30:49.474 INFO: Epoch 38: head: Default, loss=0.02340971, RMSE_E_per_atom=    5.27 meV, RMSE_F=   50.74 meV / A
+2026-09-02 23:30:49.475 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-37.pt
+2026-09-02 23:30:49.476 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-38.pt
+2026-09-02 23:30:52.277 INFO: Epoch 39: head: Default, loss=0.02243391, RMSE_E_per_atom=    3.60 meV, RMSE_F=   49.67 meV / A
+2026-09-02 23:30:52.278 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-38.pt
+2026-09-02 23:30:52.279 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-39.pt
+2026-09-02 23:30:55.081 INFO: Epoch 40: head: Default, loss=0.02236357, RMSE_E_per_atom=    6.34 meV, RMSE_F=   49.59 meV / A
+2026-09-02 23:30:55.083 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-39.pt
+2026-09-02 23:30:55.083 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-40.pt
+2026-09-02 23:30:57.883 INFO: Epoch 41: head: Default, loss=0.02137822, RMSE_E_per_atom=    5.10 meV, RMSE_F=   48.49 meV / A
+2026-09-02 23:30:57.885 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-40.pt
+2026-09-02 23:30:57.885 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-41.pt
+2026-09-02 23:31:00.698 INFO: Epoch 42: head: Default, loss=0.02104675, RMSE_E_per_atom=    6.01 meV, RMSE_F=   48.11 meV / A
+2026-09-02 23:31:00.700 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-41.pt
+2026-09-02 23:31:00.700 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-42.pt
+2026-09-02 23:31:03.501 INFO: Epoch 43: head: Default, loss=0.02026050, RMSE_E_per_atom=    5.03 meV, RMSE_F=   47.21 meV / A
+2026-09-02 23:31:03.503 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-42.pt
+2026-09-02 23:31:03.503 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-43.pt
+2026-09-02 23:31:06.303 INFO: Epoch 44: head: Default, loss=0.01955231, RMSE_E_per_atom=    3.08 meV, RMSE_F=   46.38 meV / A
+2026-09-02 23:31:06.305 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-43.pt
+2026-09-02 23:31:06.305 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-44.pt
+2026-09-02 23:31:09.138 INFO: Epoch 45: head: Default, loss=0.01854466, RMSE_E_per_atom=    2.71 meV, RMSE_F=   45.16 meV / A
+2026-09-02 23:31:09.139 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-44.pt
+2026-09-02 23:31:09.140 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-45.pt
+2026-09-02 23:31:11.932 INFO: Epoch 46: head: Default, loss=0.01798283, RMSE_E_per_atom=    4.41 meV, RMSE_F=   44.47 meV / A
+2026-09-02 23:31:11.934 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-45.pt
+2026-09-02 23:31:11.934 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-46.pt
+2026-09-02 23:31:14.738 INFO: Epoch 47: head: Default, loss=0.01748248, RMSE_E_per_atom=    3.38 meV, RMSE_F=   43.85 meV / A
+2026-09-02 23:31:14.740 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-46.pt
+2026-09-02 23:31:14.740 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-47.pt
+2026-09-02 23:31:17.538 INFO: Epoch 48: head: Default, loss=0.01688496, RMSE_E_per_atom=    4.53 meV, RMSE_F=   43.09 meV / A
+2026-09-02 23:31:17.540 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-47.pt
+2026-09-02 23:31:17.540 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-48.pt
+2026-09-02 23:31:20.338 INFO: Epoch 49: head: Default, loss=0.01602766, RMSE_E_per_atom=    3.42 meV, RMSE_F=   41.99 meV / A
+2026-09-02 23:31:20.340 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-48.pt
+2026-09-02 23:31:20.340 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-49.pt
+2026-09-02 23:31:23.146 INFO: Epoch 50: head: Default, loss=0.01571406, RMSE_E_per_atom=    2.51 meV, RMSE_F=   41.58 meV / A
+2026-09-02 23:31:23.148 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-49.pt
+2026-09-02 23:31:23.148 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-50.pt
+2026-09-02 23:31:25.954 INFO: Epoch 51: head: Default, loss=0.01503867, RMSE_E_per_atom=    3.86 meV, RMSE_F=   40.67 meV / A
+2026-09-02 23:31:25.956 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-50.pt
+2026-09-02 23:31:25.956 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-51.pt
+2026-09-02 23:31:28.756 INFO: Epoch 52: head: Default, loss=0.01479265, RMSE_E_per_atom=    4.46 meV, RMSE_F=   40.34 meV / A
+2026-09-02 23:31:28.757 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-51.pt
+2026-09-02 23:31:28.758 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-52.pt
+2026-09-02 23:31:31.559 INFO: Epoch 53: head: Default, loss=0.01450355, RMSE_E_per_atom=    3.79 meV, RMSE_F=   39.94 meV / A
+2026-09-02 23:31:31.560 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-52.pt
+2026-09-02 23:31:31.560 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-53.pt
+2026-09-02 23:31:34.364 INFO: Epoch 54: head: Default, loss=0.01416424, RMSE_E_per_atom=    3.16 meV, RMSE_F=   39.47 meV / A
+2026-09-02 23:31:34.366 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-53.pt
+2026-09-02 23:31:34.366 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-54.pt
+2026-09-02 23:31:37.162 INFO: Epoch 55: head: Default, loss=0.01350423, RMSE_E_per_atom=    3.62 meV, RMSE_F=   38.54 meV / A
+2026-09-02 23:31:37.164 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-54.pt
+2026-09-02 23:31:37.164 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-55.pt
+2026-09-02 23:31:39.959 INFO: Epoch 56: head: Default, loss=0.01317718, RMSE_E_per_atom=    4.32 meV, RMSE_F=   38.07 meV / A
+2026-09-02 23:31:39.960 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-55.pt
+2026-09-02 23:31:39.961 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-56.pt
+2026-09-02 23:31:42.761 INFO: Epoch 57: head: Default, loss=0.01308553, RMSE_E_per_atom=    2.09 meV, RMSE_F=   37.94 meV / A
+2026-09-02 23:31:42.762 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-56.pt
+2026-09-02 23:31:42.763 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-57.pt
+2026-09-02 23:31:45.566 INFO: Epoch 58: head: Default, loss=0.01276147, RMSE_E_per_atom=    2.29 meV, RMSE_F=   37.47 meV / A
+2026-09-02 23:31:45.568 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-57.pt
+2026-09-02 23:31:45.568 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-58.pt
+2026-09-02 23:31:48.369 INFO: Epoch 59: head: Default, loss=0.01276937, RMSE_E_per_atom=    9.41 meV, RMSE_F=   37.47 meV / A
+2026-09-02 23:31:51.142 INFO: Epoch 60: head: Default, loss=0.01296611, RMSE_E_per_atom=    4.67 meV, RMSE_F=   37.76 meV / A
+2026-09-02 23:31:53.924 INFO: Epoch 61: head: Default, loss=0.01223424, RMSE_E_per_atom=    3.31 meV, RMSE_F=   36.68 meV / A
+2026-09-02 23:31:53.926 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-58.pt
+2026-09-02 23:31:53.926 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-61.pt
+2026-09-02 23:31:56.728 INFO: Epoch 62: head: Default, loss=0.01197832, RMSE_E_per_atom=    2.27 meV, RMSE_F=   36.30 meV / A
+2026-09-02 23:31:56.729 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-61.pt
+2026-09-02 23:31:56.730 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-62.pt
+2026-09-02 23:31:59.527 INFO: Epoch 63: head: Default, loss=0.01165083, RMSE_E_per_atom=    2.36 meV, RMSE_F=   35.80 meV / A
+2026-09-02 23:31:59.528 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-62.pt
+2026-09-02 23:31:59.529 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-63.pt
+2026-09-02 23:32:02.330 INFO: Epoch 64: head: Default, loss=0.01108956, RMSE_E_per_atom=    2.04 meV, RMSE_F=   34.93 meV / A
+2026-09-02 23:32:02.331 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-63.pt
+2026-09-02 23:32:02.331 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-64.pt
+2026-09-02 23:32:05.138 INFO: Epoch 65: head: Default, loss=0.01088980, RMSE_E_per_atom=    1.95 meV, RMSE_F=   34.61 meV / A
+2026-09-02 23:32:05.139 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-64.pt
+2026-09-02 23:32:05.139 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-65.pt
+2026-09-02 23:32:07.938 INFO: Epoch 66: head: Default, loss=0.01058708, RMSE_E_per_atom=    4.20 meV, RMSE_F=   34.12 meV / A
+2026-09-02 23:32:07.939 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-65.pt
+2026-09-02 23:32:07.940 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-66.pt
+2026-09-02 23:32:10.724 INFO: Epoch 67: head: Default, loss=0.01029418, RMSE_E_per_atom=    4.75 meV, RMSE_F=   33.65 meV / A
+2026-09-02 23:32:10.726 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-66.pt
+2026-09-02 23:32:10.726 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-67.pt
+2026-09-02 23:32:13.531 INFO: Epoch 68: head: Default, loss=0.01007903, RMSE_E_per_atom=    2.48 meV, RMSE_F=   33.30 meV / A
+2026-09-02 23:32:13.533 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-67.pt
+2026-09-02 23:32:13.533 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-68.pt
+2026-09-02 23:32:16.326 INFO: Epoch 69: head: Default, loss=0.00967486, RMSE_E_per_atom=    2.50 meV, RMSE_F=   32.62 meV / A
+2026-09-02 23:32:16.327 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-68.pt
+2026-09-02 23:32:16.327 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-69.pt
+2026-09-02 23:32:19.133 INFO: Epoch 70: head: Default, loss=0.00948186, RMSE_E_per_atom=    3.98 meV, RMSE_F=   32.29 meV / A
+2026-09-02 23:32:19.135 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-69.pt
+2026-09-02 23:32:19.135 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-70.pt
+2026-09-02 23:32:21.943 INFO: Epoch 71: head: Default, loss=0.00971544, RMSE_E_per_atom=    3.37 meV, RMSE_F=   32.69 meV / A
+2026-09-02 23:32:24.728 INFO: Epoch 72: head: Default, loss=0.00973335, RMSE_E_per_atom=    3.92 meV, RMSE_F=   32.72 meV / A
+2026-09-02 23:32:27.511 INFO: Epoch 73: head: Default, loss=0.00936922, RMSE_E_per_atom=    3.57 meV, RMSE_F=   32.10 meV / A
+2026-09-02 23:32:27.513 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-70.pt
+2026-09-02 23:32:27.513 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-73.pt
+2026-09-02 23:32:30.313 INFO: Epoch 74: head: Default, loss=0.00919240, RMSE_E_per_atom=    4.01 meV, RMSE_F=   31.80 meV / A
+2026-09-02 23:32:30.315 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-73.pt
+2026-09-02 23:32:30.315 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-74.pt
+2026-09-02 23:32:33.107 INFO: Epoch 75: head: Default, loss=0.00908782, RMSE_E_per_atom=    1.80 meV, RMSE_F=   31.62 meV / A
+2026-09-02 23:32:33.109 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-74.pt
+2026-09-02 23:32:33.109 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-75.pt
+2026-09-02 23:32:35.898 INFO: Epoch 76: head: Default, loss=0.00887981, RMSE_E_per_atom=    2.77 meV, RMSE_F=   31.25 meV / A
+2026-09-02 23:32:35.900 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-75.pt
+2026-09-02 23:32:35.900 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-76.pt
+2026-09-02 23:32:38.698 INFO: Epoch 77: head: Default, loss=0.00893822, RMSE_E_per_atom=    2.75 meV, RMSE_F=   31.35 meV / A
+2026-09-02 23:32:41.477 INFO: Epoch 78: head: Default, loss=0.00880734, RMSE_E_per_atom=    4.06 meV, RMSE_F=   31.12 meV / A
+2026-09-02 23:32:41.478 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-76.pt
+2026-09-02 23:32:41.478 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-78.pt
+2026-09-02 23:32:44.273 INFO: Epoch 79: head: Default, loss=0.00857115, RMSE_E_per_atom=    1.65 meV, RMSE_F=   30.71 meV / A
+2026-09-02 23:32:44.275 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-78.pt
+2026-09-02 23:32:44.275 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-79.pt
+2026-09-02 23:32:47.070 INFO: Epoch 80: head: Default, loss=0.00841323, RMSE_E_per_atom=    3.38 meV, RMSE_F=   30.42 meV / A
+2026-09-02 23:32:47.071 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-79.pt
+2026-09-02 23:32:47.071 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-80.pt
+2026-09-02 23:32:49.875 INFO: Epoch 81: head: Default, loss=0.00840548, RMSE_E_per_atom=    3.45 meV, RMSE_F=   30.41 meV / A
+2026-09-02 23:32:49.877 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-80.pt
+2026-09-02 23:32:49.877 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-81.pt
+2026-09-02 23:32:52.671 INFO: Epoch 82: head: Default, loss=0.00825872, RMSE_E_per_atom=    2.28 meV, RMSE_F=   30.14 meV / A
+2026-09-02 23:32:52.673 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-81.pt
+2026-09-02 23:32:52.673 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-82.pt
+2026-09-02 23:32:55.473 INFO: Epoch 83: head: Default, loss=0.00810629, RMSE_E_per_atom=    2.08 meV, RMSE_F=   29.86 meV / A
+2026-09-02 23:32:55.474 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-82.pt
+2026-09-02 23:32:55.475 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-83.pt
+2026-09-02 23:32:58.271 INFO: Epoch 84: head: Default, loss=0.00791426, RMSE_E_per_atom=    2.59 meV, RMSE_F=   29.50 meV / A
+2026-09-02 23:32:58.273 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-83.pt
+2026-09-02 23:32:58.273 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-84.pt
+2026-09-02 23:33:01.076 INFO: Epoch 85: head: Default, loss=0.00776149, RMSE_E_per_atom=    2.81 meV, RMSE_F=   29.22 meV / A
+2026-09-02 23:33:01.078 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-84.pt
+2026-09-02 23:33:01.078 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-85.pt
+2026-09-02 23:33:03.883 INFO: Epoch 86: head: Default, loss=0.00761426, RMSE_E_per_atom=    2.93 meV, RMSE_F=   28.94 meV / A
+2026-09-02 23:33:03.884 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-85.pt
+2026-09-02 23:33:03.885 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-86.pt
+2026-09-02 23:33:06.685 INFO: Epoch 87: head: Default, loss=0.00752083, RMSE_E_per_atom=    3.52 meV, RMSE_F=   28.76 meV / A
+2026-09-02 23:33:06.687 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-86.pt
+2026-09-02 23:33:06.687 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-87.pt
+2026-09-02 23:33:09.512 INFO: Epoch 88: head: Default, loss=0.00742422, RMSE_E_per_atom=    3.02 meV, RMSE_F=   28.58 meV / A
+2026-09-02 23:33:09.514 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-87.pt
+2026-09-02 23:33:09.514 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-88.pt
+2026-09-02 23:33:12.303 INFO: Epoch 89: head: Default, loss=0.00749234, RMSE_E_per_atom=    4.24 meV, RMSE_F=   28.71 meV / A
+2026-09-02 23:33:15.075 INFO: Epoch 90: head: Default, loss=0.00746935, RMSE_E_per_atom=    3.09 meV, RMSE_F=   28.66 meV / A
+2026-09-02 23:33:17.847 INFO: Epoch 91: head: Default, loss=0.00748691, RMSE_E_per_atom=    2.34 meV, RMSE_F=   28.70 meV / A
+2026-09-02 23:33:20.620 INFO: Epoch 92: head: Default, loss=0.00730899, RMSE_E_per_atom=    4.09 meV, RMSE_F=   28.35 meV / A
+2026-09-02 23:33:20.622 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-88.pt
+2026-09-02 23:33:20.622 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-92.pt
+2026-09-02 23:33:23.423 INFO: Epoch 93: head: Default, loss=0.00709163, RMSE_E_per_atom=    1.59 meV, RMSE_F=   27.93 meV / A
+2026-09-02 23:33:23.424 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-92.pt
+2026-09-02 23:33:23.424 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-93.pt
+2026-09-02 23:33:26.221 INFO: Epoch 94: head: Default, loss=0.00685987, RMSE_E_per_atom=    3.14 meV, RMSE_F=   27.47 meV / A
+2026-09-02 23:33:26.222 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-93.pt
+2026-09-02 23:33:26.223 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-94.pt
+2026-09-02 23:33:29.016 INFO: Epoch 95: head: Default, loss=0.00685524, RMSE_E_per_atom=    1.87 meV, RMSE_F=   27.46 meV / A
+2026-09-02 23:33:29.017 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-94.pt
+2026-09-02 23:33:29.018 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-95.pt
+2026-09-02 23:33:31.820 INFO: Epoch 96: head: Default, loss=0.00674903, RMSE_E_per_atom=    1.55 meV, RMSE_F=   27.25 meV / A
+2026-09-02 23:33:31.822 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-95.pt
+2026-09-02 23:33:31.822 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-96.pt
+2026-09-02 23:33:34.623 INFO: Epoch 97: head: Default, loss=0.00661701, RMSE_E_per_atom=    1.38 meV, RMSE_F=   26.98 meV / A
+2026-09-02 23:33:34.625 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-96.pt
+2026-09-02 23:33:34.625 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-97.pt
+2026-09-02 23:33:37.417 INFO: Epoch 98: head: Default, loss=0.00660165, RMSE_E_per_atom=    1.44 meV, RMSE_F=   26.95 meV / A
+2026-09-02 23:33:37.419 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-97.pt
+2026-09-02 23:33:37.419 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-98.pt
+2026-09-02 23:33:40.218 INFO: Epoch 99: head: Default, loss=0.00655052, RMSE_E_per_atom=    2.32 meV, RMSE_F=   26.84 meV / A
+2026-09-02 23:33:40.219 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-98.pt
+2026-09-02 23:33:40.220 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-99.pt
+2026-09-02 23:33:43.021 INFO: Epoch 100: head: Default, loss=0.00648083, RMSE_E_per_atom=    1.48 meV, RMSE_F=   26.70 meV / A
+2026-09-02 23:33:43.023 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-99.pt
+2026-09-02 23:33:43.023 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-100.pt
+2026-09-02 23:33:45.821 INFO: Epoch 101: head: Default, loss=0.00637816, RMSE_E_per_atom=    2.48 meV, RMSE_F=   26.49 meV / A
+2026-09-02 23:33:45.823 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-100.pt
+2026-09-02 23:33:45.823 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-101.pt
+2026-09-02 23:33:48.622 INFO: Epoch 102: head: Default, loss=0.00635675, RMSE_E_per_atom=    2.98 meV, RMSE_F=   26.44 meV / A
+2026-09-02 23:33:48.623 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-101.pt
+2026-09-02 23:33:48.624 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-102.pt
+2026-09-02 23:33:51.419 INFO: Epoch 103: head: Default, loss=0.00643287, RMSE_E_per_atom=    2.92 meV, RMSE_F=   26.60 meV / A
+2026-09-02 23:33:54.198 INFO: Epoch 104: head: Default, loss=0.00638404, RMSE_E_per_atom=    1.54 meV, RMSE_F=   26.50 meV / A
+2026-09-02 23:33:56.981 INFO: Epoch 105: head: Default, loss=0.00620442, RMSE_E_per_atom=    1.45 meV, RMSE_F=   26.12 meV / A
+2026-09-02 23:33:56.982 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-102.pt
+2026-09-02 23:33:56.983 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-105.pt
+2026-09-02 23:33:59.762 INFO: Epoch 106: head: Default, loss=0.00612044, RMSE_E_per_atom=    2.21 meV, RMSE_F=   25.95 meV / A
+2026-09-02 23:33:59.763 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-105.pt
+2026-09-02 23:33:59.764 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-106.pt
+2026-09-02 23:34:02.554 INFO: Epoch 107: head: Default, loss=0.00597556, RMSE_E_per_atom=    3.42 meV, RMSE_F=   25.64 meV / A
+2026-09-02 23:34:02.556 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-106.pt
+2026-09-02 23:34:02.556 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-107.pt
+2026-09-02 23:34:05.345 INFO: Epoch 108: head: Default, loss=0.00591982, RMSE_E_per_atom=    1.58 meV, RMSE_F=   25.52 meV / A
+2026-09-02 23:34:05.347 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-107.pt
+2026-09-02 23:34:05.347 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-108.pt
+2026-09-02 23:34:08.137 INFO: Epoch 109: head: Default, loss=0.00595404, RMSE_E_per_atom=    1.58 meV, RMSE_F=   25.59 meV / A
+2026-09-02 23:34:10.910 INFO: Epoch 110: head: Default, loss=0.00585334, RMSE_E_per_atom=    4.29 meV, RMSE_F=   25.37 meV / A
+2026-09-02 23:34:10.912 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-108.pt
+2026-09-02 23:34:10.912 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-110.pt
+2026-09-02 23:34:13.710 INFO: Epoch 111: head: Default, loss=0.00586354, RMSE_E_per_atom=    3.72 meV, RMSE_F=   25.39 meV / A
+2026-09-02 23:34:16.479 INFO: Epoch 112: head: Default, loss=0.00579295, RMSE_E_per_atom=    2.10 meV, RMSE_F=   25.24 meV / A
+2026-09-02 23:34:16.481 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-110.pt
+2026-09-02 23:34:16.481 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-112.pt
+2026-09-02 23:34:19.279 INFO: Epoch 113: head: Default, loss=0.00563657, RMSE_E_per_atom=    1.29 meV, RMSE_F=   24.90 meV / A
+2026-09-02 23:34:19.281 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-112.pt
+2026-09-02 23:34:19.281 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-113.pt
+2026-09-02 23:34:22.080 INFO: Epoch 114: head: Default, loss=0.00556165, RMSE_E_per_atom=    1.91 meV, RMSE_F=   24.73 meV / A
+2026-09-02 23:34:22.081 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-113.pt
+2026-09-02 23:34:22.082 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-114.pt
+2026-09-02 23:34:24.886 INFO: Epoch 115: head: Default, loss=0.00545729, RMSE_E_per_atom=    1.35 meV, RMSE_F=   24.50 meV / A
+2026-09-02 23:34:24.887 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-114.pt
+2026-09-02 23:34:24.887 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-115.pt
+2026-09-02 23:34:27.686 INFO: Epoch 116: head: Default, loss=0.00541411, RMSE_E_per_atom=    1.75 meV, RMSE_F=   24.40 meV / A
+2026-09-02 23:34:27.687 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-115.pt
+2026-09-02 23:34:27.687 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-116.pt
+2026-09-02 23:34:30.486 INFO: Epoch 117: head: Default, loss=0.00532092, RMSE_E_per_atom=    2.21 meV, RMSE_F=   24.19 meV / A
+2026-09-02 23:34:30.488 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-116.pt
+2026-09-02 23:34:30.488 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-117.pt
+2026-09-02 23:34:33.283 INFO: Epoch 118: head: Default, loss=0.00527100, RMSE_E_per_atom=    1.93 meV, RMSE_F=   24.08 meV / A
+2026-09-02 23:34:33.284 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-117.pt
+2026-09-02 23:34:33.284 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-118.pt
+2026-09-02 23:34:36.071 INFO: Epoch 119: head: Default, loss=0.00516031, RMSE_E_per_atom=    1.57 meV, RMSE_F=   23.82 meV / A
+2026-09-02 23:34:36.073 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-118.pt
+2026-09-02 23:34:36.073 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-119.pt
+2026-09-02 23:34:38.874 INFO: Epoch 120: head: Default, loss=0.00513804, RMSE_E_per_atom=    2.67 meV, RMSE_F=   23.77 meV / A
+2026-09-02 23:34:38.875 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-119.pt
+2026-09-02 23:34:38.876 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-120.pt
+2026-09-02 23:34:41.669 INFO: Epoch 121: head: Default, loss=0.00516695, RMSE_E_per_atom=    1.76 meV, RMSE_F=   23.84 meV / A
+2026-09-02 23:34:44.440 INFO: Epoch 122: head: Default, loss=0.00508094, RMSE_E_per_atom=    2.33 meV, RMSE_F=   23.64 meV / A
+2026-09-02 23:34:44.442 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-120.pt
+2026-09-02 23:34:44.442 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-122.pt
+2026-09-02 23:34:47.226 INFO: Epoch 123: head: Default, loss=0.00502808, RMSE_E_per_atom=    1.33 meV, RMSE_F=   23.52 meV / A
+2026-09-02 23:34:47.227 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-122.pt
+2026-09-02 23:34:47.227 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-123.pt
+2026-09-02 23:34:50.014 INFO: Epoch 124: head: Default, loss=0.00492668, RMSE_E_per_atom=    2.65 meV, RMSE_F=   23.28 meV / A
+2026-09-02 23:34:50.016 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-123.pt
+2026-09-02 23:34:50.016 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-124.pt
+2026-09-02 23:34:52.814 INFO: Epoch 125: head: Default, loss=0.00489248, RMSE_E_per_atom=    1.03 meV, RMSE_F=   23.20 meV / A
+2026-09-02 23:34:52.815 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-124.pt
+2026-09-02 23:34:52.816 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-125.pt
+2026-09-02 23:34:55.604 INFO: Epoch 126: head: Default, loss=0.00480777, RMSE_E_per_atom=    1.08 meV, RMSE_F=   23.00 meV / A
+2026-09-02 23:34:55.606 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-125.pt
+2026-09-02 23:34:55.606 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-126.pt
+2026-09-02 23:34:58.399 INFO: Epoch 127: head: Default, loss=0.00477793, RMSE_E_per_atom=    1.15 meV, RMSE_F=   22.93 meV / A
+2026-09-02 23:34:58.400 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-126.pt
+2026-09-02 23:34:58.401 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-127.pt
+2026-09-02 23:35:01.195 INFO: Epoch 128: head: Default, loss=0.00490145, RMSE_E_per_atom=    6.64 meV, RMSE_F=   23.21 meV / A
+2026-09-02 23:35:03.970 INFO: Epoch 129: head: Default, loss=0.00500040, RMSE_E_per_atom=    4.64 meV, RMSE_F=   23.45 meV / A
+2026-09-02 23:35:06.724 INFO: Epoch 130: head: Default, loss=0.00491141, RMSE_E_per_atom=    2.56 meV, RMSE_F=   23.24 meV / A
+2026-09-02 23:35:09.499 INFO: Epoch 131: head: Default, loss=0.00486850, RMSE_E_per_atom=    1.82 meV, RMSE_F=   23.14 meV / A
+2026-09-02 23:35:12.271 INFO: Epoch 132: head: Default, loss=0.00483620, RMSE_E_per_atom=    1.20 meV, RMSE_F=   23.06 meV / A
+2026-09-02 23:35:15.046 INFO: Epoch 133: head: Default, loss=0.00480692, RMSE_E_per_atom=    2.49 meV, RMSE_F=   22.99 meV / A
+2026-09-02 23:35:17.817 INFO: Epoch 134: head: Default, loss=0.00473613, RMSE_E_per_atom=    1.45 meV, RMSE_F=   22.82 meV / A
+2026-09-02 23:35:17.818 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-127.pt
+2026-09-02 23:35:17.818 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-134.pt
+2026-09-02 23:35:20.612 INFO: Epoch 135: head: Default, loss=0.00469663, RMSE_E_per_atom=    1.28 meV, RMSE_F=   22.73 meV / A
+2026-09-02 23:35:20.614 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-134.pt
+2026-09-02 23:35:20.614 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-135.pt
+2026-09-02 23:35:23.408 INFO: Epoch 136: head: Default, loss=0.00457942, RMSE_E_per_atom=    0.94 meV, RMSE_F=   22.44 meV / A
+2026-09-02 23:35:23.410 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-135.pt
+2026-09-02 23:35:23.410 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-136.pt
+2026-09-02 23:35:26.201 INFO: Epoch 137: head: Default, loss=0.00456585, RMSE_E_per_atom=    1.37 meV, RMSE_F=   22.41 meV / A
+2026-09-02 23:35:26.202 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-136.pt
+2026-09-02 23:35:26.202 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-137.pt
+2026-09-02 23:35:28.998 INFO: Epoch 138: head: Default, loss=0.00445221, RMSE_E_per_atom=    1.81 meV, RMSE_F=   22.13 meV / A
+2026-09-02 23:35:28.999 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-137.pt
+2026-09-02 23:35:28.999 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-138.pt
+2026-09-02 23:35:31.798 INFO: Epoch 139: head: Default, loss=0.00437527, RMSE_E_per_atom=    1.86 meV, RMSE_F=   21.94 meV / A
+2026-09-02 23:35:31.800 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-138.pt
+2026-09-02 23:35:31.800 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-139.pt
+2026-09-02 23:35:34.600 INFO: Epoch 140: head: Default, loss=0.00430585, RMSE_E_per_atom=    1.71 meV, RMSE_F=   21.76 meV / A
+2026-09-02 23:35:34.602 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-139.pt
+2026-09-02 23:35:34.602 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-140.pt
+2026-09-02 23:35:37.397 INFO: Epoch 141: head: Default, loss=0.00427344, RMSE_E_per_atom=    1.01 meV, RMSE_F=   21.68 meV / A
+2026-09-02 23:35:37.399 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-140.pt
+2026-09-02 23:35:37.399 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-141.pt
+2026-09-02 23:35:40.201 INFO: Epoch 142: head: Default, loss=0.00418107, RMSE_E_per_atom=    0.97 meV, RMSE_F=   21.45 meV / A
+2026-09-02 23:35:40.202 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-141.pt
+2026-09-02 23:35:40.202 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-142.pt
+2026-09-02 23:35:43.001 INFO: Epoch 143: head: Default, loss=0.00411186, RMSE_E_per_atom=    1.34 meV, RMSE_F=   21.27 meV / A
+2026-09-02 23:35:43.002 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-142.pt
+2026-09-02 23:35:43.002 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-143.pt
+2026-09-02 23:35:45.799 INFO: Epoch 144: head: Default, loss=0.00417182, RMSE_E_per_atom=    1.80 meV, RMSE_F=   21.42 meV / A
+2026-09-02 23:35:48.583 INFO: Epoch 145: head: Default, loss=0.00414433, RMSE_E_per_atom=    2.05 meV, RMSE_F=   21.35 meV / A
+2026-09-02 23:35:51.362 INFO: Epoch 146: head: Default, loss=0.00413150, RMSE_E_per_atom=    2.30 meV, RMSE_F=   21.32 meV / A
+2026-09-02 23:35:54.140 INFO: Epoch 147: head: Default, loss=0.00413013, RMSE_E_per_atom=    1.47 meV, RMSE_F=   21.31 meV / A
+2026-09-02 23:35:56.927 INFO: Epoch 148: head: Default, loss=0.00407481, RMSE_E_per_atom=    0.96 meV, RMSE_F=   21.17 meV / A
+2026-09-02 23:35:56.928 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-143.pt
+2026-09-02 23:35:56.929 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-148.pt
+2026-09-02 23:35:59.728 INFO: Epoch 149: head: Default, loss=0.00401522, RMSE_E_per_atom=    0.83 meV, RMSE_F=   21.02 meV / A
+2026-09-02 23:35:59.730 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-148.pt
+2026-09-02 23:35:59.730 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-149.pt
+2026-09-02 23:36:02.533 INFO: Epoch 150: head: Default, loss=0.00395871, RMSE_E_per_atom=    1.39 meV, RMSE_F=   20.87 meV / A
+2026-09-02 23:36:02.534 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-149.pt
+2026-09-02 23:36:02.535 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-150.pt
+2026-09-02 23:36:05.332 INFO: Epoch 151: head: Default, loss=0.00393062, RMSE_E_per_atom=    1.46 meV, RMSE_F=   20.79 meV / A
+2026-09-02 23:36:05.333 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-150.pt
+2026-09-02 23:36:05.334 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-151.pt
+2026-09-02 23:36:08.128 INFO: Epoch 152: head: Default, loss=0.00389433, RMSE_E_per_atom=    0.84 meV, RMSE_F=   20.70 meV / A
+2026-09-02 23:36:08.129 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-151.pt
+2026-09-02 23:36:08.129 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-152.pt
+2026-09-02 23:36:10.924 INFO: Epoch 153: head: Default, loss=0.00387456, RMSE_E_per_atom=    1.34 meV, RMSE_F=   20.64 meV / A
+2026-09-02 23:36:10.926 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-152.pt
+2026-09-02 23:36:10.926 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-153.pt
+2026-09-02 23:36:13.735 INFO: Epoch 154: head: Default, loss=0.00387229, RMSE_E_per_atom=    0.82 meV, RMSE_F=   20.64 meV / A
+2026-09-02 23:36:13.736 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-153.pt
+2026-09-02 23:36:13.737 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-154.pt
+2026-09-02 23:36:16.542 INFO: Epoch 155: head: Default, loss=0.00384431, RMSE_E_per_atom=    1.10 meV, RMSE_F=   20.56 meV / A
+2026-09-02 23:36:16.543 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-154.pt
+2026-09-02 23:36:16.544 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-155.pt
+2026-09-02 23:36:19.342 INFO: Epoch 156: head: Default, loss=0.00376101, RMSE_E_per_atom=    1.62 meV, RMSE_F=   20.34 meV / A
+2026-09-02 23:36:19.343 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-155.pt
+2026-09-02 23:36:19.344 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-156.pt
+2026-09-02 23:36:22.142 INFO: Epoch 157: head: Default, loss=0.00373483, RMSE_E_per_atom=    2.07 meV, RMSE_F=   20.27 meV / A
+2026-09-02 23:36:22.144 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-156.pt
+2026-09-02 23:36:22.144 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-157.pt
+2026-09-02 23:36:24.945 INFO: Epoch 158: head: Default, loss=0.00377968, RMSE_E_per_atom=    0.90 meV, RMSE_F=   20.39 meV / A
+2026-09-02 23:36:27.728 INFO: Epoch 159: head: Default, loss=0.00372775, RMSE_E_per_atom=    1.47 meV, RMSE_F=   20.25 meV / A
+2026-09-02 23:36:27.730 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-157.pt
+2026-09-02 23:36:27.730 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-159.pt
+2026-09-02 23:36:30.542 INFO: Epoch 160: head: Default, loss=0.00371828, RMSE_E_per_atom=    3.97 meV, RMSE_F=   20.22 meV / A
+2026-09-02 23:36:30.544 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-159.pt
+2026-09-02 23:36:30.544 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-160.pt
+2026-09-02 23:36:33.350 INFO: Epoch 161: head: Default, loss=0.00371613, RMSE_E_per_atom=    2.20 meV, RMSE_F=   20.22 meV / A
+2026-09-02 23:36:33.352 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-160.pt
+2026-09-02 23:36:33.352 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-161.pt
+2026-09-02 23:36:36.154 INFO: Epoch 162: head: Default, loss=0.00374798, RMSE_E_per_atom=    1.85 meV, RMSE_F=   20.30 meV / A
+2026-09-02 23:36:38.943 INFO: Epoch 163: head: Default, loss=0.00369471, RMSE_E_per_atom=    0.76 meV, RMSE_F=   20.16 meV / A
+2026-09-02 23:36:38.945 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-161.pt
+2026-09-02 23:36:38.945 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-163.pt
+2026-09-02 23:36:41.753 INFO: Epoch 164: head: Default, loss=0.00368868, RMSE_E_per_atom=    1.59 meV, RMSE_F=   20.14 meV / A
+2026-09-02 23:36:41.754 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-163.pt
+2026-09-02 23:36:41.754 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-164.pt
+2026-09-02 23:36:44.554 INFO: Epoch 165: head: Default, loss=0.00367923, RMSE_E_per_atom=    1.77 meV, RMSE_F=   20.12 meV / A
+2026-09-02 23:36:44.556 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-164.pt
+2026-09-02 23:36:44.556 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-165.pt
+2026-09-02 23:36:47.368 INFO: Epoch 166: head: Default, loss=0.00362850, RMSE_E_per_atom=    1.29 meV, RMSE_F=   19.98 meV / A
+2026-09-02 23:36:47.369 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-165.pt
+2026-09-02 23:36:47.370 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-166.pt
+2026-09-02 23:36:50.176 INFO: Epoch 167: head: Default, loss=0.00358584, RMSE_E_per_atom=    1.16 meV, RMSE_F=   19.86 meV / A
+2026-09-02 23:36:50.178 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-166.pt
+2026-09-02 23:36:50.178 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-167.pt
+2026-09-02 23:36:52.984 INFO: Epoch 168: head: Default, loss=0.00359943, RMSE_E_per_atom=    1.38 meV, RMSE_F=   19.90 meV / A
+2026-09-02 23:36:55.765 INFO: Epoch 169: head: Default, loss=0.00364152, RMSE_E_per_atom=    0.82 meV, RMSE_F=   20.01 meV / A
+2026-09-02 23:36:58.550 INFO: Epoch 170: head: Default, loss=0.00368068, RMSE_E_per_atom=    1.93 meV, RMSE_F=   20.12 meV / A
+2026-09-02 23:37:01.334 INFO: Epoch 171: head: Default, loss=0.00364764, RMSE_E_per_atom=    0.82 meV, RMSE_F=   20.03 meV / A
+2026-09-02 23:37:04.115 INFO: Epoch 172: head: Default, loss=0.00362923, RMSE_E_per_atom=    1.71 meV, RMSE_F=   19.98 meV / A
+2026-09-02 23:37:06.905 INFO: Epoch 173: head: Default, loss=0.00352436, RMSE_E_per_atom=    0.79 meV, RMSE_F=   19.69 meV / A
+2026-09-02 23:37:06.907 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-167.pt
+2026-09-02 23:37:06.907 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-173.pt
+2026-09-02 23:37:09.737 INFO: Epoch 174: head: Default, loss=0.00350537, RMSE_E_per_atom=    0.94 meV, RMSE_F=   19.64 meV / A
+2026-09-02 23:37:09.738 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-173.pt
+2026-09-02 23:37:09.738 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-174.pt
+2026-09-02 23:37:12.539 INFO: Epoch 175: head: Default, loss=0.00348119, RMSE_E_per_atom=    0.82 meV, RMSE_F=   19.57 meV / A
+2026-09-02 23:37:12.541 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-174.pt
+2026-09-02 23:37:12.541 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-175.pt
+2026-09-02 23:37:15.340 INFO: Epoch 176: head: Default, loss=0.00348710, RMSE_E_per_atom=    2.56 meV, RMSE_F=   19.58 meV / A
+2026-09-02 23:37:18.125 INFO: Epoch 177: head: Default, loss=0.00348745, RMSE_E_per_atom=    0.92 meV, RMSE_F=   19.59 meV / A
+2026-09-02 23:37:20.899 INFO: Epoch 178: head: Default, loss=0.00346360, RMSE_E_per_atom=    1.25 meV, RMSE_F=   19.52 meV / A
+2026-09-02 23:37:20.900 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-175.pt
+2026-09-02 23:37:20.901 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-178.pt
+2026-09-02 23:37:23.701 INFO: Epoch 179: head: Default, loss=0.00342486, RMSE_E_per_atom=    1.16 meV, RMSE_F=   19.41 meV / A
+2026-09-02 23:37:23.702 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-178.pt
+2026-09-02 23:37:23.703 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-179.pt
+2026-09-02 23:37:26.496 INFO: Epoch 180: head: Default, loss=0.00338321, RMSE_E_per_atom=    0.82 meV, RMSE_F=   19.29 meV / A
+2026-09-02 23:37:26.497 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-179.pt
+2026-09-02 23:37:26.497 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-180.pt
+2026-09-02 23:37:29.294 INFO: Epoch 181: head: Default, loss=0.00333293, RMSE_E_per_atom=    1.17 meV, RMSE_F=   19.15 meV / A
+2026-09-02 23:37:29.296 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-180.pt
+2026-09-02 23:37:29.296 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-181.pt
+2026-09-02 23:37:32.088 INFO: Epoch 182: head: Default, loss=0.00333150, RMSE_E_per_atom=    2.33 meV, RMSE_F=   19.14 meV / A
+2026-09-02 23:37:32.090 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-181.pt
+2026-09-02 23:37:32.090 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-182.pt
+2026-09-02 23:37:34.880 INFO: Epoch 183: head: Default, loss=0.00337943, RMSE_E_per_atom=    2.79 meV, RMSE_F=   19.28 meV / A
+2026-09-02 23:37:37.642 INFO: Epoch 184: head: Default, loss=0.00340272, RMSE_E_per_atom=    1.51 meV, RMSE_F=   19.35 meV / A
+2026-09-02 23:37:40.407 INFO: Epoch 185: head: Default, loss=0.00338399, RMSE_E_per_atom=    1.57 meV, RMSE_F=   19.29 meV / A
+2026-09-02 23:37:43.176 INFO: Epoch 186: head: Default, loss=0.00330620, RMSE_E_per_atom=    0.90 meV, RMSE_F=   19.07 meV / A
+2026-09-02 23:37:43.178 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-182.pt
+2026-09-02 23:37:43.178 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-186.pt
+2026-09-02 23:37:45.955 INFO: Epoch 187: head: Default, loss=0.00330151, RMSE_E_per_atom=    0.92 meV, RMSE_F=   19.06 meV / A
+2026-09-02 23:37:45.957 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-186.pt
+2026-09-02 23:37:45.957 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-187.pt
+2026-09-02 23:37:48.737 INFO: Epoch 188: head: Default, loss=0.00329448, RMSE_E_per_atom=    0.82 meV, RMSE_F=   19.04 meV / A
+2026-09-02 23:37:48.739 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-187.pt
+2026-09-02 23:37:48.739 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-188.pt
+2026-09-02 23:37:51.521 INFO: Epoch 189: head: Default, loss=0.00329989, RMSE_E_per_atom=    1.02 meV, RMSE_F=   19.05 meV / A
+2026-09-02 23:37:54.278 INFO: Epoch 190: head: Default, loss=0.00325248, RMSE_E_per_atom=    1.28 meV, RMSE_F=   18.91 meV / A
+2026-09-02 23:37:54.280 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-188.pt
+2026-09-02 23:37:54.280 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-190.pt
+2026-09-02 23:37:57.056 INFO: Epoch 191: head: Default, loss=0.00318187, RMSE_E_per_atom=    2.05 meV, RMSE_F=   18.71 meV / A
+2026-09-02 23:37:57.058 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-190.pt
+2026-09-02 23:37:57.058 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-191.pt
+2026-09-02 23:37:59.852 INFO: Epoch 192: head: Default, loss=0.00318067, RMSE_E_per_atom=    0.72 meV, RMSE_F=   18.70 meV / A
+2026-09-02 23:37:59.854 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-191.pt
+2026-09-02 23:37:59.854 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-192.pt
+2026-09-02 23:38:02.636 INFO: Epoch 193: head: Default, loss=0.00320785, RMSE_E_per_atom=    0.82 meV, RMSE_F=   18.78 meV / A
+2026-09-02 23:38:05.412 INFO: Epoch 194: head: Default, loss=0.00320708, RMSE_E_per_atom=    1.69 meV, RMSE_F=   18.78 meV / A
+2026-09-02 23:38:08.191 INFO: Epoch 195: head: Default, loss=0.00318245, RMSE_E_per_atom=    0.98 meV, RMSE_F=   18.71 meV / A
+2026-09-02 23:38:10.967 INFO: Epoch 196: head: Default, loss=0.00315740, RMSE_E_per_atom=    1.31 meV, RMSE_F=   18.64 meV / A
+2026-09-02 23:38:10.969 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-192.pt
+2026-09-02 23:38:10.969 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-196.pt
+2026-09-02 23:38:13.755 INFO: Epoch 197: head: Default, loss=0.00314257, RMSE_E_per_atom=    1.16 meV, RMSE_F=   18.59 meV / A
+2026-09-02 23:38:13.757 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-196.pt
+2026-09-02 23:38:13.757 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-197.pt
+2026-09-02 23:38:16.551 INFO: Epoch 198: head: Default, loss=0.00315690, RMSE_E_per_atom=    0.69 meV, RMSE_F=   18.63 meV / A
+2026-09-02 23:38:19.329 INFO: Epoch 199: head: Default, loss=0.00310307, RMSE_E_per_atom=    0.71 meV, RMSE_F=   18.48 meV / A
+2026-09-02 23:38:19.330 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-197.pt
+2026-09-02 23:38:19.331 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-199.pt
+2026-09-02 23:38:22.133 INFO: Epoch 200: head: Default, loss=0.00302618, RMSE_E_per_atom=    0.74 meV, RMSE_F=   18.24 meV / A
+2026-09-02 23:38:22.134 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-199.pt
+2026-09-02 23:38:22.135 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-200.pt
+2026-09-02 23:38:24.923 INFO: Epoch 201: head: Default, loss=0.00302383, RMSE_E_per_atom=    1.42 meV, RMSE_F=   18.24 meV / A
+2026-09-02 23:38:24.925 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-200.pt
+2026-09-02 23:38:24.925 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-201.pt
+2026-09-02 23:38:27.720 INFO: Epoch 202: head: Default, loss=0.00302444, RMSE_E_per_atom=    1.05 meV, RMSE_F=   18.24 meV / A
+2026-09-02 23:38:30.499 INFO: Epoch 203: head: Default, loss=0.00298691, RMSE_E_per_atom=    1.34 meV, RMSE_F=   18.13 meV / A
+2026-09-02 23:38:30.501 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-201.pt
+2026-09-02 23:38:30.501 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-203.pt
+2026-09-02 23:38:33.298 INFO: Epoch 204: head: Default, loss=0.00296817, RMSE_E_per_atom=    1.51 meV, RMSE_F=   18.07 meV / A
+2026-09-02 23:38:33.300 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-203.pt
+2026-09-02 23:38:33.300 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-204.pt
+2026-09-02 23:38:36.099 INFO: Epoch 205: head: Default, loss=0.00299955, RMSE_E_per_atom=    2.70 meV, RMSE_F=   18.16 meV / A
+2026-09-02 23:38:38.880 INFO: Epoch 206: head: Default, loss=0.00306903, RMSE_E_per_atom=    2.02 meV, RMSE_F=   18.37 meV / A
+2026-09-02 23:38:41.659 INFO: Epoch 207: head: Default, loss=0.00308638, RMSE_E_per_atom=    1.75 meV, RMSE_F=   18.42 meV / A
+2026-09-02 23:38:44.438 INFO: Epoch 208: head: Default, loss=0.00301709, RMSE_E_per_atom=    0.65 meV, RMSE_F=   18.22 meV / A
+2026-09-02 23:38:47.226 INFO: Epoch 209: head: Default, loss=0.00294723, RMSE_E_per_atom=    0.90 meV, RMSE_F=   18.01 meV / A
+2026-09-02 23:38:47.227 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-204.pt
+2026-09-02 23:38:47.228 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-209.pt
+2026-09-02 23:38:50.017 INFO: Epoch 210: head: Default, loss=0.00295214, RMSE_E_per_atom=    2.41 meV, RMSE_F=   18.02 meV / A
+2026-09-02 23:38:52.792 INFO: Epoch 211: head: Default, loss=0.00293844, RMSE_E_per_atom=    1.45 meV, RMSE_F=   17.98 meV / A
+2026-09-02 23:38:52.794 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-209.pt
+2026-09-02 23:38:52.794 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-211.pt
+2026-09-02 23:38:55.594 INFO: Epoch 212: head: Default, loss=0.00291447, RMSE_E_per_atom=    0.61 meV, RMSE_F=   17.90 meV / A
+2026-09-02 23:38:55.596 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-211.pt
+2026-09-02 23:38:55.596 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-212.pt
+2026-09-02 23:38:58.400 INFO: Epoch 213: head: Default, loss=0.00293222, RMSE_E_per_atom=    0.82 meV, RMSE_F=   17.96 meV / A
+2026-09-02 23:39:01.177 INFO: Epoch 214: head: Default, loss=0.00291683, RMSE_E_per_atom=    0.98 meV, RMSE_F=   17.91 meV / A
+2026-09-02 23:39:03.956 INFO: Epoch 215: head: Default, loss=0.00287601, RMSE_E_per_atom=    1.21 meV, RMSE_F=   17.79 meV / A
+2026-09-02 23:39:03.957 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-212.pt
+2026-09-02 23:39:03.958 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-215.pt
+2026-09-02 23:39:06.758 INFO: Epoch 216: head: Default, loss=0.00285232, RMSE_E_per_atom=    0.72 meV, RMSE_F=   17.71 meV / A
+2026-09-02 23:39:06.760 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-215.pt
+2026-09-02 23:39:06.760 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-216.pt
+2026-09-02 23:39:09.554 INFO: Epoch 217: head: Default, loss=0.00284296, RMSE_E_per_atom=    0.88 meV, RMSE_F=   17.68 meV / A
+2026-09-02 23:39:09.556 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-216.pt
+2026-09-02 23:39:09.556 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-217.pt
+2026-09-02 23:39:12.359 INFO: Epoch 218: head: Default, loss=0.00285351, RMSE_E_per_atom=    1.72 meV, RMSE_F=   17.72 meV / A
+2026-09-02 23:39:15.131 INFO: Epoch 219: head: Default, loss=0.00282695, RMSE_E_per_atom=    1.54 meV, RMSE_F=   17.63 meV / A
+2026-09-02 23:39:15.133 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-217.pt
+2026-09-02 23:39:15.133 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-219.pt
+2026-09-02 23:39:17.931 INFO: Epoch 220: head: Default, loss=0.00281053, RMSE_E_per_atom=    1.65 meV, RMSE_F=   17.58 meV / A
+2026-09-02 23:39:17.932 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-219.pt
+2026-09-02 23:39:17.932 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-220.pt
+2026-09-02 23:39:20.740 INFO: Epoch 221: head: Default, loss=0.00281041, RMSE_E_per_atom=    1.20 meV, RMSE_F=   17.58 meV / A
+2026-09-02 23:39:20.741 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-220.pt
+2026-09-02 23:39:20.742 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-221.pt
+2026-09-02 23:39:23.540 INFO: Epoch 222: head: Default, loss=0.00277502, RMSE_E_per_atom=    0.57 meV, RMSE_F=   17.47 meV / A
+2026-09-02 23:39:23.541 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-221.pt
+2026-09-02 23:39:23.541 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-222.pt
+2026-09-02 23:39:26.343 INFO: Epoch 223: head: Default, loss=0.00278703, RMSE_E_per_atom=    0.56 meV, RMSE_F=   17.51 meV / A
+2026-09-02 23:39:29.128 INFO: Epoch 224: head: Default, loss=0.00281029, RMSE_E_per_atom=    1.47 meV, RMSE_F=   17.58 meV / A
+2026-09-02 23:39:31.917 INFO: Epoch 225: head: Default, loss=0.00281957, RMSE_E_per_atom=    0.77 meV, RMSE_F=   17.61 meV / A
+2026-09-02 23:39:34.701 INFO: Epoch 226: head: Default, loss=0.00285606, RMSE_E_per_atom=    0.92 meV, RMSE_F=   17.72 meV / A
+2026-09-02 23:39:37.474 INFO: Epoch 227: head: Default, loss=0.00290811, RMSE_E_per_atom=    1.11 meV, RMSE_F=   17.89 meV / A
+2026-09-02 23:39:40.251 INFO: Epoch 228: head: Default, loss=0.00282005, RMSE_E_per_atom=    0.66 meV, RMSE_F=   17.61 meV / A
+2026-09-02 23:39:43.039 INFO: Epoch 229: head: Default, loss=0.00278986, RMSE_E_per_atom=    0.57 meV, RMSE_F=   17.52 meV / A
+2026-09-02 23:39:45.828 INFO: Epoch 230: head: Default, loss=0.00275537, RMSE_E_per_atom=    1.19 meV, RMSE_F=   17.41 meV / A
+2026-09-02 23:39:45.829 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-222.pt
+2026-09-02 23:39:45.830 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-230.pt
+2026-09-02 23:39:48.632 INFO: Epoch 231: head: Default, loss=0.00272502, RMSE_E_per_atom=    1.08 meV, RMSE_F=   17.31 meV / A
+2026-09-02 23:39:48.634 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-230.pt
+2026-09-02 23:39:48.634 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-231.pt
+2026-09-02 23:39:51.435 INFO: Epoch 232: head: Default, loss=0.00272255, RMSE_E_per_atom=    0.73 meV, RMSE_F=   17.31 meV / A
+2026-09-02 23:39:51.437 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-231.pt
+2026-09-02 23:39:51.437 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-232.pt
+2026-09-02 23:39:54.242 INFO: Epoch 233: head: Default, loss=0.00269856, RMSE_E_per_atom=    0.81 meV, RMSE_F=   17.23 meV / A
+2026-09-02 23:39:54.244 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-232.pt
+2026-09-02 23:39:54.244 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-233.pt
+2026-09-02 23:39:57.054 INFO: Epoch 234: head: Default, loss=0.00267080, RMSE_E_per_atom=    1.96 meV, RMSE_F=   17.14 meV / A
+2026-09-02 23:39:57.056 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-233.pt
+2026-09-02 23:39:57.056 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-234.pt
+2026-09-02 23:39:59.858 INFO: Epoch 235: head: Default, loss=0.00265115, RMSE_E_per_atom=    1.37 meV, RMSE_F=   17.08 meV / A
+2026-09-02 23:39:59.859 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-234.pt
+2026-09-02 23:39:59.860 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-235.pt
+2026-09-02 23:40:02.663 INFO: Epoch 236: head: Default, loss=0.00265328, RMSE_E_per_atom=    2.49 meV, RMSE_F=   17.08 meV / A
+2026-09-02 23:40:05.429 INFO: Epoch 237: head: Default, loss=0.00276735, RMSE_E_per_atom=    1.34 meV, RMSE_F=   17.45 meV / A
+2026-09-02 23:40:08.194 INFO: Epoch 238: head: Default, loss=0.00274193, RMSE_E_per_atom=    1.22 meV, RMSE_F=   17.37 meV / A
+2026-09-02 23:40:10.974 INFO: Epoch 239: head: Default, loss=0.00271795, RMSE_E_per_atom=    0.73 meV, RMSE_F=   17.29 meV / A
+2026-09-02 23:40:13.758 INFO: Epoch 240: head: Default, loss=0.00272559, RMSE_E_per_atom=    1.32 meV, RMSE_F=   17.31 meV / A
+2026-09-02 23:40:16.538 INFO: Epoch 241: head: Default, loss=0.00274711, RMSE_E_per_atom=    0.62 meV, RMSE_F=   17.38 meV / A
+2026-09-02 23:40:19.328 INFO: Epoch 242: head: Default, loss=0.00272168, RMSE_E_per_atom=    1.31 meV, RMSE_F=   17.30 meV / A
+2026-09-02 23:40:22.115 INFO: Epoch 243: head: Default, loss=0.00268980, RMSE_E_per_atom=    0.57 meV, RMSE_F=   17.20 meV / A
+2026-09-02 23:40:24.906 INFO: Epoch 244: head: Default, loss=0.00267278, RMSE_E_per_atom=    1.87 meV, RMSE_F=   17.15 meV / A
+2026-09-02 23:40:27.691 INFO: Epoch 245: head: Default, loss=0.00263626, RMSE_E_per_atom=    1.56 meV, RMSE_F=   17.03 meV / A
+2026-09-02 23:40:27.693 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-235.pt
+2026-09-02 23:40:27.693 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-245.pt
+2026-09-02 23:40:30.495 INFO: Epoch 246: head: Default, loss=0.00260745, RMSE_E_per_atom=    0.53 meV, RMSE_F=   16.94 meV / A
+2026-09-02 23:40:30.497 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-245.pt
+2026-09-02 23:40:30.497 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-246.pt
+2026-09-02 23:40:33.300 INFO: Epoch 247: head: Default, loss=0.00261225, RMSE_E_per_atom=    1.24 meV, RMSE_F=   16.95 meV / A
+2026-09-02 23:40:36.076 INFO: Epoch 248: head: Default, loss=0.00259856, RMSE_E_per_atom=    0.88 meV, RMSE_F=   16.91 meV / A
+2026-09-02 23:40:36.077 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-246.pt
+2026-09-02 23:40:36.078 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-248.pt
+2026-09-02 23:40:38.885 INFO: Epoch 249: head: Default, loss=0.00255975, RMSE_E_per_atom=    0.95 meV, RMSE_F=   16.78 meV / A
+2026-09-02 23:40:38.886 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-248.pt
+2026-09-02 23:40:38.886 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-249.pt
+2026-09-02 23:40:41.669 INFO: Epoch 250: head: Default, loss=0.00260502, RMSE_E_per_atom=    2.43 meV, RMSE_F=   16.93 meV / A
+2026-09-02 23:40:44.448 INFO: Epoch 251: head: Default, loss=0.00258981, RMSE_E_per_atom=    1.35 meV, RMSE_F=   16.88 meV / A
+2026-09-02 23:40:47.215 INFO: Epoch 252: head: Default, loss=0.00267898, RMSE_E_per_atom=    1.47 meV, RMSE_F=   17.17 meV / A
+2026-09-02 23:40:50.000 INFO: Epoch 253: head: Default, loss=0.00260626, RMSE_E_per_atom=    1.66 meV, RMSE_F=   16.93 meV / A
+2026-09-02 23:40:52.784 INFO: Epoch 254: head: Default, loss=0.00256662, RMSE_E_per_atom=    0.71 meV, RMSE_F=   16.80 meV / A
+2026-09-02 23:40:55.571 INFO: Epoch 255: head: Default, loss=0.00255258, RMSE_E_per_atom=    1.23 meV, RMSE_F=   16.76 meV / A
+2026-09-02 23:40:55.572 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-249.pt
+2026-09-02 23:40:55.572 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-255.pt
+2026-09-02 23:40:58.378 INFO: Epoch 256: head: Default, loss=0.00253437, RMSE_E_per_atom=    2.12 meV, RMSE_F=   16.70 meV / A
+2026-09-02 23:40:58.380 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-255.pt
+2026-09-02 23:40:58.380 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-256.pt
+2026-09-02 23:41:01.185 INFO: Epoch 257: head: Default, loss=0.00250706, RMSE_E_per_atom=    1.05 meV, RMSE_F=   16.61 meV / A
+2026-09-02 23:41:01.186 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-256.pt
+2026-09-02 23:41:01.187 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-257.pt
+2026-09-02 23:41:03.986 INFO: Epoch 258: head: Default, loss=0.00250698, RMSE_E_per_atom=    0.90 meV, RMSE_F=   16.61 meV / A
+2026-09-02 23:41:03.987 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-257.pt
+2026-09-02 23:41:03.988 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-258.pt
+2026-09-02 23:41:06.789 INFO: Epoch 259: head: Default, loss=0.00250222, RMSE_E_per_atom=    0.66 meV, RMSE_F=   16.59 meV / A
+2026-09-02 23:41:06.790 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-258.pt
+2026-09-02 23:41:06.790 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-259.pt
+2026-09-02 23:41:09.599 INFO: Epoch 260: head: Default, loss=0.00249338, RMSE_E_per_atom=    1.14 meV, RMSE_F=   16.56 meV / A
+2026-09-02 23:41:09.600 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-259.pt
+2026-09-02 23:41:09.601 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-260.pt
+2026-09-02 23:41:12.405 INFO: Epoch 261: head: Default, loss=0.00250661, RMSE_E_per_atom=    0.60 meV, RMSE_F=   16.60 meV / A
+2026-09-02 23:41:15.189 INFO: Epoch 262: head: Default, loss=0.00250970, RMSE_E_per_atom=    0.80 meV, RMSE_F=   16.62 meV / A
+2026-09-02 23:41:17.968 INFO: Epoch 263: head: Default, loss=0.00247416, RMSE_E_per_atom=    0.63 meV, RMSE_F=   16.50 meV / A
+2026-09-02 23:41:17.969 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-260.pt
+2026-09-02 23:41:17.970 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-263.pt
+2026-09-02 23:41:20.772 INFO: Epoch 264: head: Default, loss=0.00247607, RMSE_E_per_atom=    0.69 meV, RMSE_F=   16.50 meV / A
+2026-09-02 23:41:23.558 INFO: Epoch 265: head: Default, loss=0.00243770, RMSE_E_per_atom=    1.20 meV, RMSE_F=   16.37 meV / A
+2026-09-02 23:41:23.560 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-263.pt
+2026-09-02 23:41:23.560 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-265.pt
+2026-09-02 23:41:26.371 INFO: Epoch 266: head: Default, loss=0.00244272, RMSE_E_per_atom=    0.74 meV, RMSE_F=   16.39 meV / A
+2026-09-02 23:41:29.146 INFO: Epoch 267: head: Default, loss=0.00244609, RMSE_E_per_atom=    0.64 meV, RMSE_F=   16.40 meV / A
+2026-09-02 23:41:31.928 INFO: Epoch 268: head: Default, loss=0.00239377, RMSE_E_per_atom=    1.36 meV, RMSE_F=   16.23 meV / A
+2026-09-02 23:41:31.929 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-265.pt
+2026-09-02 23:41:31.930 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-268.pt
+2026-09-02 23:41:34.737 INFO: Epoch 269: head: Default, loss=0.00240931, RMSE_E_per_atom=    0.55 meV, RMSE_F=   16.28 meV / A
+2026-09-02 23:41:37.525 INFO: Epoch 270: head: Default, loss=0.00238401, RMSE_E_per_atom=    0.90 meV, RMSE_F=   16.19 meV / A
+2026-09-02 23:41:37.526 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-268.pt
+2026-09-02 23:41:37.527 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-270.pt
+2026-09-02 23:41:40.329 INFO: Epoch 271: head: Default, loss=0.00239627, RMSE_E_per_atom=    1.10 meV, RMSE_F=   16.24 meV / A
+2026-09-02 23:41:43.108 INFO: Epoch 272: head: Default, loss=0.00239093, RMSE_E_per_atom=    0.58 meV, RMSE_F=   16.22 meV / A
+2026-09-02 23:41:45.877 INFO: Epoch 273: head: Default, loss=0.00239619, RMSE_E_per_atom=    1.76 meV, RMSE_F=   16.23 meV / A
+2026-09-02 23:41:48.660 INFO: Epoch 274: head: Default, loss=0.00241286, RMSE_E_per_atom=    1.47 meV, RMSE_F=   16.29 meV / A
+2026-09-02 23:41:51.450 INFO: Epoch 275: head: Default, loss=0.00242531, RMSE_E_per_atom=    1.34 meV, RMSE_F=   16.33 meV / A
+2026-09-02 23:41:54.240 INFO: Epoch 276: head: Default, loss=0.00240756, RMSE_E_per_atom=    1.18 meV, RMSE_F=   16.27 meV / A
+2026-09-02 23:41:57.030 INFO: Epoch 277: head: Default, loss=0.00239704, RMSE_E_per_atom=    1.06 meV, RMSE_F=   16.24 meV / A
+2026-09-02 23:41:59.816 INFO: Epoch 278: head: Default, loss=0.00238148, RMSE_E_per_atom=    0.75 meV, RMSE_F=   16.19 meV / A
+2026-09-02 23:41:59.818 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-270.pt
+2026-09-02 23:41:59.818 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-278.pt
+2026-09-02 23:42:02.628 INFO: Epoch 279: head: Default, loss=0.00237394, RMSE_E_per_atom=    1.31 meV, RMSE_F=   16.16 meV / A
+2026-09-02 23:42:02.629 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-278.pt
+2026-09-02 23:42:02.629 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-279.pt
+2026-09-02 23:42:05.435 INFO: Epoch 280: head: Default, loss=0.00236306, RMSE_E_per_atom=    1.17 meV, RMSE_F=   16.12 meV / A
+2026-09-02 23:42:05.437 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-279.pt
+2026-09-02 23:42:05.437 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-280.pt
+2026-09-02 23:42:08.239 INFO: Epoch 281: head: Default, loss=0.00234330, RMSE_E_per_atom=    0.93 meV, RMSE_F=   16.05 meV / A
+2026-09-02 23:42:08.241 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-280.pt
+2026-09-02 23:42:08.241 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-281.pt
+2026-09-02 23:42:11.048 INFO: Epoch 282: head: Default, loss=0.00233170, RMSE_E_per_atom=    0.99 meV, RMSE_F=   16.01 meV / A
+2026-09-02 23:42:11.049 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-281.pt
+2026-09-02 23:42:11.049 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-282.pt
+2026-09-02 23:42:13.860 INFO: Epoch 283: head: Default, loss=0.00234376, RMSE_E_per_atom=    1.33 meV, RMSE_F=   16.06 meV / A
+2026-09-02 23:42:16.642 INFO: Epoch 284: head: Default, loss=0.00233633, RMSE_E_per_atom=    0.85 meV, RMSE_F=   16.03 meV / A
+2026-09-02 23:42:19.429 INFO: Epoch 285: head: Default, loss=0.00231565, RMSE_E_per_atom=    1.19 meV, RMSE_F=   15.96 meV / A
+2026-09-02 23:42:19.431 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-282.pt
+2026-09-02 23:42:19.431 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-285.pt
+2026-09-02 23:42:22.235 INFO: Epoch 286: head: Default, loss=0.00235098, RMSE_E_per_atom=    0.76 meV, RMSE_F=   16.08 meV / A
+2026-09-02 23:42:25.019 INFO: Epoch 287: head: Default, loss=0.00232320, RMSE_E_per_atom=    0.80 meV, RMSE_F=   15.99 meV / A
+2026-09-02 23:42:27.805 INFO: Epoch 288: head: Default, loss=0.00233621, RMSE_E_per_atom=    1.05 meV, RMSE_F=   16.03 meV / A
+2026-09-02 23:42:30.595 INFO: Epoch 289: head: Default, loss=0.00233923, RMSE_E_per_atom=    0.50 meV, RMSE_F=   16.04 meV / A
+2026-09-02 23:42:33.380 INFO: Epoch 290: head: Default, loss=0.00232712, RMSE_E_per_atom=    0.91 meV, RMSE_F=   16.00 meV / A
+2026-09-02 23:42:36.168 INFO: Epoch 291: head: Default, loss=0.00231306, RMSE_E_per_atom=    0.48 meV, RMSE_F=   15.95 meV / A
+2026-09-02 23:42:36.170 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-285.pt
+2026-09-02 23:42:36.170 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-291.pt
+2026-09-02 23:42:38.974 INFO: Epoch 292: head: Default, loss=0.00230109, RMSE_E_per_atom=    0.53 meV, RMSE_F=   15.91 meV / A
+2026-09-02 23:42:38.976 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-291.pt
+2026-09-02 23:42:38.976 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-292.pt
+2026-09-02 23:42:41.786 INFO: Epoch 293: head: Default, loss=0.00227399, RMSE_E_per_atom=    1.01 meV, RMSE_F=   15.82 meV / A
+2026-09-02 23:42:41.787 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-292.pt
+2026-09-02 23:42:41.788 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-293.pt
+2026-09-02 23:42:44.597 INFO: Epoch 294: head: Default, loss=0.00226927, RMSE_E_per_atom=    0.64 meV, RMSE_F=   15.80 meV / A
+2026-09-02 23:42:44.599 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-293.pt
+2026-09-02 23:42:44.599 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-294.pt
+2026-09-02 23:42:47.400 INFO: Epoch 295: head: Default, loss=0.00226064, RMSE_E_per_atom=    0.58 meV, RMSE_F=   15.77 meV / A
+2026-09-02 23:42:47.402 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-294.pt
+2026-09-02 23:42:47.402 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-295.pt
+2026-09-02 23:42:50.202 INFO: Epoch 296: head: Default, loss=0.00227325, RMSE_E_per_atom=    0.88 meV, RMSE_F=   15.81 meV / A
+2026-09-02 23:42:52.989 INFO: Epoch 297: head: Default, loss=0.00225764, RMSE_E_per_atom=    0.54 meV, RMSE_F=   15.76 meV / A
+2026-09-02 23:42:52.991 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-295.pt
+2026-09-02 23:42:52.991 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-297.pt
+2026-09-02 23:42:55.795 INFO: Epoch 298: head: Default, loss=0.00222890, RMSE_E_per_atom=    0.54 meV, RMSE_F=   15.66 meV / A
+2026-09-02 23:42:55.796 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-297.pt
+2026-09-02 23:42:55.797 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-298.pt
+2026-09-02 23:42:58.603 INFO: Epoch 299: head: Default, loss=0.00222079, RMSE_E_per_atom=    1.36 meV, RMSE_F=   15.63 meV / A
+2026-09-02 23:42:58.604 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-298.pt
+2026-09-02 23:42:58.604 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-299.pt
+2026-09-02 23:43:01.407 INFO: Epoch 300: head: Default, loss=0.00222711, RMSE_E_per_atom=    0.74 meV, RMSE_F=   15.65 meV / A
+2026-09-02 23:43:04.184 INFO: Epoch 301: head: Default, loss=0.00223557, RMSE_E_per_atom=    1.08 meV, RMSE_F=   15.68 meV / A
+2026-09-02 23:43:06.972 INFO: Epoch 302: head: Default, loss=0.00221619, RMSE_E_per_atom=    1.21 meV, RMSE_F=   15.61 meV / A
+2026-09-02 23:43:06.973 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-299.pt
+2026-09-02 23:43:06.974 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-302.pt
+2026-09-02 23:43:09.783 INFO: Epoch 303: head: Default, loss=0.00220424, RMSE_E_per_atom=    0.52 meV, RMSE_F=   15.57 meV / A
+2026-09-02 23:43:09.785 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-302.pt
+2026-09-02 23:43:09.785 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-303.pt
+2026-09-02 23:43:12.591 INFO: Epoch 304: head: Default, loss=0.00219692, RMSE_E_per_atom=    0.72 meV, RMSE_F=   15.55 meV / A
+2026-09-02 23:43:12.593 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-303.pt
+2026-09-02 23:43:12.593 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-304.pt
+2026-09-02 23:43:15.399 INFO: Epoch 305: head: Default, loss=0.00218054, RMSE_E_per_atom=    0.59 meV, RMSE_F=   15.49 meV / A
+2026-09-02 23:43:15.401 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-304.pt
+2026-09-02 23:43:15.401 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-305.pt
+2026-09-02 23:43:18.211 INFO: Epoch 306: head: Default, loss=0.00220481, RMSE_E_per_atom=    1.34 meV, RMSE_F=   15.57 meV / A
+2026-09-02 23:43:20.997 INFO: Epoch 307: head: Default, loss=0.00217963, RMSE_E_per_atom=    0.48 meV, RMSE_F=   15.48 meV / A
+2026-09-02 23:43:20.999 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-305.pt
+2026-09-02 23:43:20.999 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-307.pt
+2026-09-02 23:43:23.805 INFO: Epoch 308: head: Default, loss=0.00216561, RMSE_E_per_atom=    0.96 meV, RMSE_F=   15.43 meV / A
+2026-09-02 23:43:23.806 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-307.pt
+2026-09-02 23:43:23.807 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-308.pt
+2026-09-02 23:43:26.609 INFO: Epoch 309: head: Default, loss=0.00217546, RMSE_E_per_atom=    0.56 meV, RMSE_F=   15.47 meV / A
+2026-09-02 23:43:29.385 INFO: Epoch 310: head: Default, loss=0.00216532, RMSE_E_per_atom=    0.85 meV, RMSE_F=   15.43 meV / A
+2026-09-02 23:43:29.387 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-308.pt
+2026-09-02 23:43:29.387 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-310.pt
+2026-09-02 23:43:32.188 INFO: Epoch 311: head: Default, loss=0.00217696, RMSE_E_per_atom=    0.85 meV, RMSE_F=   15.47 meV / A
+2026-09-02 23:43:34.975 INFO: Epoch 312: head: Default, loss=0.00216914, RMSE_E_per_atom=    0.57 meV, RMSE_F=   15.45 meV / A
+2026-09-02 23:43:37.758 INFO: Epoch 313: head: Default, loss=0.00215590, RMSE_E_per_atom=    0.89 meV, RMSE_F=   15.40 meV / A
+2026-09-02 23:43:37.760 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-310.pt
+2026-09-02 23:43:37.760 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-313.pt
+2026-09-02 23:43:40.568 INFO: Epoch 314: head: Default, loss=0.00215922, RMSE_E_per_atom=    1.57 meV, RMSE_F=   15.41 meV / A
+2026-09-02 23:43:43.354 INFO: Epoch 315: head: Default, loss=0.00219533, RMSE_E_per_atom=    0.81 meV, RMSE_F=   15.54 meV / A
+2026-09-02 23:43:46.141 INFO: Epoch 316: head: Default, loss=0.00220815, RMSE_E_per_atom=    1.72 meV, RMSE_F=   15.58 meV / A
+2026-09-02 23:43:48.925 INFO: Epoch 317: head: Default, loss=0.00221545, RMSE_E_per_atom=    1.54 meV, RMSE_F=   15.61 meV / A
+2026-09-02 23:43:51.694 INFO: Epoch 318: head: Default, loss=0.00220932, RMSE_E_per_atom=    0.85 meV, RMSE_F=   15.59 meV / A
+2026-09-02 23:43:54.471 INFO: Epoch 319: head: Default, loss=0.00218424, RMSE_E_per_atom=    1.44 meV, RMSE_F=   15.50 meV / A
+2026-09-02 23:43:57.260 INFO: Epoch 320: head: Default, loss=0.00217252, RMSE_E_per_atom=    0.84 meV, RMSE_F=   15.46 meV / A
+2026-09-02 23:44:00.043 INFO: Epoch 321: head: Default, loss=0.00214769, RMSE_E_per_atom=    0.81 meV, RMSE_F=   15.37 meV / A
+2026-09-02 23:44:00.045 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-313.pt
+2026-09-02 23:44:00.045 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-321.pt
+2026-09-02 23:44:02.839 INFO: Epoch 322: head: Default, loss=0.00211528, RMSE_E_per_atom=    1.44 meV, RMSE_F=   15.25 meV / A
+2026-09-02 23:44:02.841 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-321.pt
+2026-09-02 23:44:02.841 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-322.pt
+2026-09-02 23:44:05.634 INFO: Epoch 323: head: Default, loss=0.00209797, RMSE_E_per_atom=    0.55 meV, RMSE_F=   15.19 meV / A
+2026-09-02 23:44:05.636 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-322.pt
+2026-09-02 23:44:05.636 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-323.pt
+2026-09-02 23:44:08.436 INFO: Epoch 324: head: Default, loss=0.00209420, RMSE_E_per_atom=    0.70 meV, RMSE_F=   15.18 meV / A
+2026-09-02 23:44:08.437 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-323.pt
+2026-09-02 23:44:08.438 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-324.pt
+2026-09-02 23:44:11.238 INFO: Epoch 325: head: Default, loss=0.00207451, RMSE_E_per_atom=    0.54 meV, RMSE_F=   15.11 meV / A
+2026-09-02 23:44:11.240 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-324.pt
+2026-09-02 23:44:11.240 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-325.pt
+2026-09-02 23:44:14.044 INFO: Epoch 326: head: Default, loss=0.00206952, RMSE_E_per_atom=    1.56 meV, RMSE_F=   15.09 meV / A
+2026-09-02 23:44:14.045 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-325.pt
+2026-09-02 23:44:14.046 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-326.pt
+2026-09-02 23:44:16.849 INFO: Epoch 327: head: Default, loss=0.00207964, RMSE_E_per_atom=    0.48 meV, RMSE_F=   15.12 meV / A
+2026-09-02 23:44:19.628 INFO: Epoch 328: head: Default, loss=0.00207964, RMSE_E_per_atom=    1.58 meV, RMSE_F=   15.12 meV / A
+2026-09-02 23:44:22.444 INFO: Epoch 329: head: Default, loss=0.00206235, RMSE_E_per_atom=    1.62 meV, RMSE_F=   15.06 meV / A
+2026-09-02 23:44:22.446 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-326.pt
+2026-09-02 23:44:22.446 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-329.pt
+2026-09-02 23:44:25.319 INFO: Epoch 330: head: Default, loss=0.00209651, RMSE_E_per_atom=    1.47 meV, RMSE_F=   15.19 meV / A
+2026-09-02 23:44:28.174 INFO: Epoch 331: head: Default, loss=0.00210191, RMSE_E_per_atom=    1.02 meV, RMSE_F=   15.21 meV / A
+2026-09-02 23:44:30.974 INFO: Epoch 332: head: Default, loss=0.00210327, RMSE_E_per_atom=    0.84 meV, RMSE_F=   15.21 meV / A
+2026-09-02 23:44:33.757 INFO: Epoch 333: head: Default, loss=0.00208665, RMSE_E_per_atom=    1.42 meV, RMSE_F=   15.15 meV / A
+2026-09-02 23:44:36.549 INFO: Epoch 334: head: Default, loss=0.00208322, RMSE_E_per_atom=    0.94 meV, RMSE_F=   15.14 meV / A
+2026-09-02 23:44:39.338 INFO: Epoch 335: head: Default, loss=0.00207140, RMSE_E_per_atom=    0.57 meV, RMSE_F=   15.09 meV / A
+2026-09-02 23:44:42.131 INFO: Epoch 336: head: Default, loss=0.00206170, RMSE_E_per_atom=    0.83 meV, RMSE_F=   15.06 meV / A
+2026-09-02 23:44:42.133 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-329.pt
+2026-09-02 23:44:42.133 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-336.pt
+2026-09-02 23:44:44.949 INFO: Epoch 337: head: Default, loss=0.00207343, RMSE_E_per_atom=    0.77 meV, RMSE_F=   15.10 meV / A
+2026-09-02 23:44:47.744 INFO: Epoch 338: head: Default, loss=0.00204347, RMSE_E_per_atom=    0.75 meV, RMSE_F=   14.99 meV / A
+2026-09-02 23:44:47.746 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-336.pt
+2026-09-02 23:44:47.746 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-338.pt
+2026-09-02 23:44:50.548 INFO: Epoch 339: head: Default, loss=0.00202132, RMSE_E_per_atom=    1.16 meV, RMSE_F=   14.91 meV / A
+2026-09-02 23:44:50.549 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-338.pt
+2026-09-02 23:44:50.550 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-339.pt
+2026-09-02 23:44:53.360 INFO: Epoch 340: head: Default, loss=0.00203504, RMSE_E_per_atom=    0.87 meV, RMSE_F=   14.96 meV / A
+2026-09-02 23:44:56.153 INFO: Epoch 341: head: Default, loss=0.00204772, RMSE_E_per_atom=    1.10 meV, RMSE_F=   15.01 meV / A
+2026-09-02 23:44:58.945 INFO: Epoch 342: head: Default, loss=0.00203948, RMSE_E_per_atom=    0.82 meV, RMSE_F=   14.98 meV / A
+2026-09-02 23:45:01.741 INFO: Epoch 343: head: Default, loss=0.00203748, RMSE_E_per_atom=    1.19 meV, RMSE_F=   14.97 meV / A
+2026-09-02 23:45:04.527 INFO: Epoch 344: head: Default, loss=0.00202407, RMSE_E_per_atom=    0.78 meV, RMSE_F=   14.92 meV / A
+2026-09-02 23:45:07.289 INFO: Epoch 345: head: Default, loss=0.00200806, RMSE_E_per_atom=    0.53 meV, RMSE_F=   14.86 meV / A
+2026-09-02 23:45:07.291 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-339.pt
+2026-09-02 23:45:07.291 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-345.pt
+2026-09-02 23:45:10.097 INFO: Epoch 346: head: Default, loss=0.00200799, RMSE_E_per_atom=    0.58 meV, RMSE_F=   14.86 meV / A
+2026-09-02 23:45:10.098 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-345.pt
+2026-09-02 23:45:10.099 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-346.pt
+2026-09-02 23:45:12.918 INFO: Epoch 347: head: Default, loss=0.00200411, RMSE_E_per_atom=    1.02 meV, RMSE_F=   14.85 meV / A
+2026-09-02 23:45:12.919 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-346.pt
+2026-09-02 23:45:12.920 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-347.pt
+2026-09-02 23:45:15.740 INFO: Epoch 348: head: Default, loss=0.00200313, RMSE_E_per_atom=    1.14 meV, RMSE_F=   14.84 meV / A
+2026-09-02 23:45:15.742 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-347.pt
+2026-09-02 23:45:15.742 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-348.pt
+2026-09-02 23:45:18.561 INFO: Epoch 349: head: Default, loss=0.00201686, RMSE_E_per_atom=    1.27 meV, RMSE_F=   14.89 meV / A
+2026-09-02 23:45:21.357 INFO: Epoch 350: head: Default, loss=0.00198701, RMSE_E_per_atom=    0.89 meV, RMSE_F=   14.78 meV / A
+2026-09-02 23:45:21.359 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-348.pt
+2026-09-02 23:45:21.359 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-350.pt
+2026-09-02 23:45:24.172 INFO: Epoch 351: head: Default, loss=0.00197504, RMSE_E_per_atom=    1.58 meV, RMSE_F=   14.74 meV / A
+2026-09-02 23:45:24.174 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-350.pt
+2026-09-02 23:45:24.174 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-351.pt
+2026-09-02 23:45:26.989 INFO: Epoch 352: head: Default, loss=0.00197286, RMSE_E_per_atom=    1.22 meV, RMSE_F=   14.73 meV / A
+2026-09-02 23:45:26.991 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-351.pt
+2026-09-02 23:45:26.991 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-352.pt
+2026-09-02 23:45:29.802 INFO: Epoch 353: head: Default, loss=0.00197960, RMSE_E_per_atom=    0.92 meV, RMSE_F=   14.76 meV / A
+2026-09-02 23:45:32.596 INFO: Epoch 354: head: Default, loss=0.00200240, RMSE_E_per_atom=    0.73 meV, RMSE_F=   14.84 meV / A
+2026-09-02 23:45:35.387 INFO: Epoch 355: head: Default, loss=0.00199094, RMSE_E_per_atom=    0.85 meV, RMSE_F=   14.80 meV / A
+2026-09-02 23:45:38.179 INFO: Epoch 356: head: Default, loss=0.00200876, RMSE_E_per_atom=    0.65 meV, RMSE_F=   14.86 meV / A
+2026-09-02 23:45:40.966 INFO: Epoch 357: head: Default, loss=0.00201323, RMSE_E_per_atom=    1.15 meV, RMSE_F=   14.88 meV / A
+2026-09-02 23:45:43.762 INFO: Epoch 358: head: Default, loss=0.00199830, RMSE_E_per_atom=    0.62 meV, RMSE_F=   14.83 meV / A
+2026-09-02 23:45:46.555 INFO: Epoch 359: head: Default, loss=0.00199083, RMSE_E_per_atom=    0.82 meV, RMSE_F=   14.80 meV / A
+2026-09-02 23:45:49.344 INFO: Epoch 360: head: Default, loss=0.00199816, RMSE_E_per_atom=    1.05 meV, RMSE_F=   14.83 meV / A
+2026-09-02 23:45:52.131 INFO: Epoch 361: head: Default, loss=0.00200448, RMSE_E_per_atom=    0.85 meV, RMSE_F=   14.85 meV / A
+2026-09-02 23:45:54.923 INFO: Epoch 362: head: Default, loss=0.00200563, RMSE_E_per_atom=    0.60 meV, RMSE_F=   14.85 meV / A
+2026-09-02 23:45:57.720 INFO: Epoch 363: head: Default, loss=0.00198469, RMSE_E_per_atom=    1.20 meV, RMSE_F=   14.78 meV / A
+2026-09-02 23:46:00.515 INFO: Epoch 364: head: Default, loss=0.00198981, RMSE_E_per_atom=    1.18 meV, RMSE_F=   14.79 meV / A
+2026-09-02 23:46:03.299 INFO: Epoch 365: head: Default, loss=0.00199257, RMSE_E_per_atom=    1.72 meV, RMSE_F=   14.80 meV / A
+2026-09-02 23:46:06.126 INFO: Epoch 366: head: Default, loss=0.00201363, RMSE_E_per_atom=    0.85 meV, RMSE_F=   14.88 meV / A
+2026-09-02 23:46:08.996 INFO: Epoch 367: head: Default, loss=0.00197882, RMSE_E_per_atom=    0.84 meV, RMSE_F=   14.75 meV / A
+2026-09-02 23:46:11.854 INFO: Epoch 368: head: Default, loss=0.00200133, RMSE_E_per_atom=    1.06 meV, RMSE_F=   14.84 meV / A
+2026-09-02 23:46:14.715 INFO: Epoch 369: head: Default, loss=0.00195588, RMSE_E_per_atom=    1.41 meV, RMSE_F=   14.67 meV / A
+2026-09-02 23:46:14.716 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-352.pt
+2026-09-02 23:46:14.717 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-369.pt
+2026-09-02 23:46:17.526 INFO: Epoch 370: head: Default, loss=0.00195484, RMSE_E_per_atom=    1.12 meV, RMSE_F=   14.66 meV / A
+2026-09-02 23:46:17.528 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-369.pt
+2026-09-02 23:46:17.528 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-370.pt
+2026-09-02 23:46:20.309 INFO: Epoch 371: head: Default, loss=0.00195242, RMSE_E_per_atom=    1.32 meV, RMSE_F=   14.65 meV / A
+2026-09-02 23:46:20.311 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-370.pt
+2026-09-02 23:46:20.311 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-371.pt
+2026-09-02 23:46:23.069 INFO: Epoch 372: head: Default, loss=0.00191588, RMSE_E_per_atom=    0.57 meV, RMSE_F=   14.52 meV / A
+2026-09-02 23:46:23.071 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-371.pt
+2026-09-02 23:46:23.071 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-372.pt
+2026-09-02 23:46:25.837 INFO: Epoch 373: head: Default, loss=0.00193840, RMSE_E_per_atom=    1.12 meV, RMSE_F=   14.60 meV / A
+2026-09-02 23:46:28.599 INFO: Epoch 374: head: Default, loss=0.00196448, RMSE_E_per_atom=    0.99 meV, RMSE_F=   14.70 meV / A
+2026-09-02 23:46:31.356 INFO: Epoch 375: head: Default, loss=0.00194326, RMSE_E_per_atom=    0.55 meV, RMSE_F=   14.62 meV / A
+2026-09-02 23:46:34.118 INFO: Epoch 376: head: Default, loss=0.00192322, RMSE_E_per_atom=    1.25 meV, RMSE_F=   14.54 meV / A
+2026-09-02 23:46:36.863 INFO: Epoch 377: head: Default, loss=0.00191967, RMSE_E_per_atom=    0.91 meV, RMSE_F=   14.53 meV / A
+2026-09-02 23:46:39.616 INFO: Epoch 378: head: Default, loss=0.00192569, RMSE_E_per_atom=    0.66 meV, RMSE_F=   14.55 meV / A
+2026-09-02 23:46:42.372 INFO: Epoch 379: head: Default, loss=0.00192767, RMSE_E_per_atom=    1.42 meV, RMSE_F=   14.56 meV / A
+2026-09-02 23:46:45.125 INFO: Epoch 380: head: Default, loss=0.00193806, RMSE_E_per_atom=    1.09 meV, RMSE_F=   14.60 meV / A
+2026-09-02 23:46:47.876 INFO: Epoch 381: head: Default, loss=0.00193190, RMSE_E_per_atom=    1.47 meV, RMSE_F=   14.58 meV / A
+2026-09-02 23:46:50.628 INFO: Epoch 382: head: Default, loss=0.00193532, RMSE_E_per_atom=    1.27 meV, RMSE_F=   14.59 meV / A
+2026-09-02 23:46:53.371 INFO: Epoch 383: head: Default, loss=0.00192547, RMSE_E_per_atom=    0.60 meV, RMSE_F=   14.55 meV / A
+2026-09-02 23:46:56.125 INFO: Epoch 384: head: Default, loss=0.00192736, RMSE_E_per_atom=    1.24 meV, RMSE_F=   14.56 meV / A
+2026-09-02 23:46:58.872 INFO: Epoch 385: head: Default, loss=0.00191055, RMSE_E_per_atom=    1.29 meV, RMSE_F=   14.50 meV / A
+2026-09-02 23:46:58.873 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-372.pt
+2026-09-02 23:46:58.874 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-385.pt
+2026-09-02 23:47:01.645 INFO: Epoch 386: head: Default, loss=0.00190267, RMSE_E_per_atom=    0.79 meV, RMSE_F=   14.47 meV / A
+2026-09-02 23:47:01.646 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-385.pt
+2026-09-02 23:47:01.647 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-386.pt
+2026-09-02 23:47:04.402 INFO: Epoch 387: head: Default, loss=0.00188552, RMSE_E_per_atom=    0.64 meV, RMSE_F=   14.40 meV / A
+2026-09-02 23:47:04.403 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-386.pt
+2026-09-02 23:47:04.403 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-387.pt
+2026-09-02 23:47:07.178 INFO: Epoch 388: head: Default, loss=0.00188061, RMSE_E_per_atom=    0.64 meV, RMSE_F=   14.38 meV / A
+2026-09-02 23:47:07.180 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-387.pt
+2026-09-02 23:47:07.180 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-388.pt
+2026-09-02 23:47:09.934 INFO: Epoch 389: head: Default, loss=0.00187755, RMSE_E_per_atom=    0.62 meV, RMSE_F=   14.37 meV / A
+2026-09-02 23:47:09.936 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-388.pt
+2026-09-02 23:47:09.936 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-389.pt
+2026-09-02 23:47:12.692 INFO: Epoch 390: head: Default, loss=0.00187251, RMSE_E_per_atom=    1.14 meV, RMSE_F=   14.35 meV / A
+2026-09-02 23:47:12.694 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-389.pt
+2026-09-02 23:47:12.694 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-390.pt
+2026-09-02 23:47:15.450 INFO: Epoch 391: head: Default, loss=0.00186405, RMSE_E_per_atom=    1.26 meV, RMSE_F=   14.32 meV / A
+2026-09-02 23:47:15.452 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-390.pt
+2026-09-02 23:47:15.452 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-391.pt
+2026-09-02 23:47:18.204 INFO: Epoch 392: head: Default, loss=0.00188781, RMSE_E_per_atom=    0.97 meV, RMSE_F=   14.41 meV / A
+2026-09-02 23:47:20.937 INFO: Epoch 393: head: Default, loss=0.00187070, RMSE_E_per_atom=    1.17 meV, RMSE_F=   14.34 meV / A
+2026-09-02 23:47:23.669 INFO: Epoch 394: head: Default, loss=0.00184448, RMSE_E_per_atom=    0.80 meV, RMSE_F=   14.24 meV / A
+2026-09-02 23:47:23.671 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-391.pt
+2026-09-02 23:47:23.671 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-394.pt
+2026-09-02 23:47:26.427 INFO: Epoch 395: head: Default, loss=0.00184046, RMSE_E_per_atom=    0.62 meV, RMSE_F=   14.23 meV / A
+2026-09-02 23:47:26.429 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-394.pt
+2026-09-02 23:47:26.429 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-395.pt
+2026-09-02 23:47:29.168 INFO: Epoch 396: head: Default, loss=0.00183658, RMSE_E_per_atom=    0.52 meV, RMSE_F=   14.21 meV / A
+2026-09-02 23:47:29.170 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-395.pt
+2026-09-02 23:47:29.170 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-396.pt
+2026-09-02 23:47:31.922 INFO: Epoch 397: head: Default, loss=0.00181260, RMSE_E_per_atom=    1.01 meV, RMSE_F=   14.12 meV / A
+2026-09-02 23:47:31.924 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-396.pt
+2026-09-02 23:47:31.924 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-397.pt
+2026-09-02 23:47:34.684 INFO: Epoch 398: head: Default, loss=0.00180975, RMSE_E_per_atom=    0.44 meV, RMSE_F=   14.11 meV / A
+2026-09-02 23:47:34.685 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-397.pt
+2026-09-02 23:47:34.686 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-398.pt
+2026-09-02 23:47:37.436 INFO: Epoch 399: head: Default, loss=0.00182362, RMSE_E_per_atom=    0.84 meV, RMSE_F=   14.16 meV / A
+2026-09-02 23:47:40.171 INFO: Epoch 400: head: Default, loss=0.00180651, RMSE_E_per_atom=    0.85 meV, RMSE_F=   14.10 meV / A
+2026-09-02 23:47:40.172 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-398.pt
+2026-09-02 23:47:40.173 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-400.pt
+2026-09-02 23:47:42.922 INFO: Epoch 401: head: Default, loss=0.00179624, RMSE_E_per_atom=    0.83 meV, RMSE_F=   14.06 meV / A
+2026-09-02 23:47:42.923 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-400.pt
+2026-09-02 23:47:42.924 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-401.pt
+2026-09-02 23:47:45.665 INFO: Epoch 402: head: Default, loss=0.00180836, RMSE_E_per_atom=    1.00 meV, RMSE_F=   14.10 meV / A
+2026-09-02 23:47:48.394 INFO: Epoch 403: head: Default, loss=0.00180169, RMSE_E_per_atom=    0.91 meV, RMSE_F=   14.08 meV / A
+2026-09-02 23:47:51.125 INFO: Epoch 404: head: Default, loss=0.00181277, RMSE_E_per_atom=    1.34 meV, RMSE_F=   14.12 meV / A
+2026-09-02 23:47:53.860 INFO: Epoch 405: head: Default, loss=0.00182917, RMSE_E_per_atom=    0.70 meV, RMSE_F=   14.18 meV / A
+2026-09-02 23:47:56.593 INFO: Epoch 406: head: Default, loss=0.00182593, RMSE_E_per_atom=    0.57 meV, RMSE_F=   14.17 meV / A
+2026-09-02 23:47:59.336 INFO: Epoch 407: head: Default, loss=0.00182766, RMSE_E_per_atom=    1.41 meV, RMSE_F=   14.18 meV / A
+2026-09-02 23:48:02.078 INFO: Epoch 408: head: Default, loss=0.00184928, RMSE_E_per_atom=    0.63 meV, RMSE_F=   14.26 meV / A
+2026-09-02 23:48:04.817 INFO: Epoch 409: head: Default, loss=0.00186284, RMSE_E_per_atom=    0.95 meV, RMSE_F=   14.31 meV / A
+2026-09-02 23:48:07.554 INFO: Epoch 410: head: Default, loss=0.00185586, RMSE_E_per_atom=    2.36 meV, RMSE_F=   14.29 meV / A
+2026-09-02 23:48:10.259 INFO: Epoch 411: head: Default, loss=0.00187423, RMSE_E_per_atom=    3.11 meV, RMSE_F=   14.36 meV / A
+2026-09-02 23:48:12.998 INFO: Epoch 412: head: Default, loss=0.00191621, RMSE_E_per_atom=    1.79 meV, RMSE_F=   14.52 meV / A
+2026-09-02 23:48:15.725 INFO: Epoch 413: head: Default, loss=0.00199608, RMSE_E_per_atom=    1.26 meV, RMSE_F=   14.82 meV / A
+2026-09-02 23:48:18.447 INFO: Epoch 414: head: Default, loss=0.00197754, RMSE_E_per_atom=    1.15 meV, RMSE_F=   14.75 meV / A
+2026-09-02 23:48:21.189 INFO: Epoch 415: head: Default, loss=0.00191187, RMSE_E_per_atom=    1.10 meV, RMSE_F=   14.50 meV / A
+2026-09-02 23:48:23.923 INFO: Epoch 416: head: Default, loss=0.00186999, RMSE_E_per_atom=    0.79 meV, RMSE_F=   14.34 meV / A
+2026-09-02 23:48:26.640 INFO: Epoch 417: head: Default, loss=0.00183875, RMSE_E_per_atom=    0.77 meV, RMSE_F=   14.22 meV / A
+2026-09-02 23:48:29.388 INFO: Epoch 418: head: Default, loss=0.00181986, RMSE_E_per_atom=    0.81 meV, RMSE_F=   14.15 meV / A
+2026-09-02 23:48:32.129 INFO: Epoch 419: head: Default, loss=0.00182669, RMSE_E_per_atom=    0.69 meV, RMSE_F=   14.18 meV / A
+2026-09-02 23:48:34.861 INFO: Epoch 420: head: Default, loss=0.00180307, RMSE_E_per_atom=    0.93 meV, RMSE_F=   14.08 meV / A
+2026-09-02 23:48:37.591 INFO: Epoch 421: head: Default, loss=0.00178630, RMSE_E_per_atom=    1.47 meV, RMSE_F=   14.02 meV / A
+2026-09-02 23:48:37.593 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-401.pt
+2026-09-02 23:48:37.593 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-421.pt
+2026-09-02 23:48:40.354 INFO: Epoch 422: head: Default, loss=0.00179661, RMSE_E_per_atom=    1.86 meV, RMSE_F=   14.06 meV / A
+2026-09-02 23:48:43.086 INFO: Epoch 423: head: Default, loss=0.00181627, RMSE_E_per_atom=    1.18 meV, RMSE_F=   14.13 meV / A
+2026-09-02 23:48:45.820 INFO: Epoch 424: head: Default, loss=0.00176682, RMSE_E_per_atom=    1.14 meV, RMSE_F=   13.94 meV / A
+2026-09-02 23:48:45.822 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-421.pt
+2026-09-02 23:48:45.822 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-424.pt
+2026-09-02 23:48:48.591 INFO: Epoch 425: head: Default, loss=0.00176930, RMSE_E_per_atom=    0.82 meV, RMSE_F=   13.95 meV / A
+2026-09-02 23:48:51.318 INFO: Epoch 426: head: Default, loss=0.00178288, RMSE_E_per_atom=    1.11 meV, RMSE_F=   14.00 meV / A
+2026-09-02 23:48:54.039 INFO: Epoch 427: head: Default, loss=0.00177560, RMSE_E_per_atom=    0.85 meV, RMSE_F=   13.98 meV / A
+2026-09-02 23:48:56.778 INFO: Epoch 428: head: Default, loss=0.00178088, RMSE_E_per_atom=    0.55 meV, RMSE_F=   14.00 meV / A
+2026-09-02 23:48:59.505 INFO: Epoch 429: head: Default, loss=0.00176716, RMSE_E_per_atom=    0.67 meV, RMSE_F=   13.94 meV / A
+2026-09-02 23:49:02.241 INFO: Epoch 430: head: Default, loss=0.00176283, RMSE_E_per_atom=    0.54 meV, RMSE_F=   13.93 meV / A
+2026-09-02 23:49:02.243 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-424.pt
+2026-09-02 23:49:02.243 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-430.pt
+2026-09-02 23:49:05.002 INFO: Epoch 431: head: Default, loss=0.00175630, RMSE_E_per_atom=    0.52 meV, RMSE_F=   13.90 meV / A
+2026-09-02 23:49:05.004 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-430.pt
+2026-09-02 23:49:05.004 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-431.pt
+2026-09-02 23:49:07.755 INFO: Epoch 432: head: Default, loss=0.00174192, RMSE_E_per_atom=    0.71 meV, RMSE_F=   13.84 meV / A
+2026-09-02 23:49:07.757 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-431.pt
+2026-09-02 23:49:07.757 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-432.pt
+2026-09-02 23:49:10.508 INFO: Epoch 433: head: Default, loss=0.00175697, RMSE_E_per_atom=    0.68 meV, RMSE_F=   13.90 meV / A
+2026-09-02 23:49:13.241 INFO: Epoch 434: head: Default, loss=0.00176137, RMSE_E_per_atom=    0.81 meV, RMSE_F=   13.92 meV / A
+2026-09-02 23:49:15.979 INFO: Epoch 435: head: Default, loss=0.00174428, RMSE_E_per_atom=    0.63 meV, RMSE_F=   13.85 meV / A
+2026-09-02 23:49:18.711 INFO: Epoch 436: head: Default, loss=0.00173883, RMSE_E_per_atom=    1.21 meV, RMSE_F=   13.83 meV / A
+2026-09-02 23:49:18.713 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-432.pt
+2026-09-02 23:49:18.713 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-436.pt
+2026-09-02 23:49:21.470 INFO: Epoch 437: head: Default, loss=0.00172971, RMSE_E_per_atom=    0.89 meV, RMSE_F=   13.79 meV / A
+2026-09-02 23:49:21.471 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-436.pt
+2026-09-02 23:49:21.472 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-437.pt
+2026-09-02 23:49:24.229 INFO: Epoch 438: head: Default, loss=0.00173024, RMSE_E_per_atom=    1.20 meV, RMSE_F=   13.80 meV / A
+2026-09-02 23:49:26.967 INFO: Epoch 439: head: Default, loss=0.00171606, RMSE_E_per_atom=    1.03 meV, RMSE_F=   13.74 meV / A
+2026-09-02 23:49:26.968 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-437.pt
+2026-09-02 23:49:26.969 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-439.pt
+2026-09-02 23:49:29.739 INFO: Epoch 440: head: Default, loss=0.00172299, RMSE_E_per_atom=    1.25 meV, RMSE_F=   13.77 meV / A
+2026-09-02 23:49:32.466 INFO: Epoch 441: head: Default, loss=0.00171292, RMSE_E_per_atom=    0.65 meV, RMSE_F=   13.73 meV / A
+2026-09-02 23:49:32.468 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-439.pt
+2026-09-02 23:49:32.468 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-441.pt
+2026-09-02 23:49:35.210 INFO: Epoch 442: head: Default, loss=0.00169347, RMSE_E_per_atom=    0.88 meV, RMSE_F=   13.65 meV / A
+2026-09-02 23:49:35.211 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-441.pt
+2026-09-02 23:49:35.212 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-442.pt
+2026-09-02 23:49:37.964 INFO: Epoch 443: head: Default, loss=0.00169292, RMSE_E_per_atom=    0.52 meV, RMSE_F=   13.65 meV / A
+2026-09-02 23:49:37.966 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-442.pt
+2026-09-02 23:49:37.966 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-443.pt
+2026-09-02 23:49:40.713 INFO: Epoch 444: head: Default, loss=0.00168567, RMSE_E_per_atom=    0.64 meV, RMSE_F=   13.62 meV / A
+2026-09-02 23:49:40.715 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-443.pt
+2026-09-02 23:49:40.715 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-444.pt
+2026-09-02 23:49:43.465 INFO: Epoch 445: head: Default, loss=0.00169976, RMSE_E_per_atom=    0.97 meV, RMSE_F=   13.67 meV / A
+2026-09-02 23:49:46.195 INFO: Epoch 446: head: Default, loss=0.00168991, RMSE_E_per_atom=    1.69 meV, RMSE_F=   13.63 meV / A
+2026-09-02 23:49:48.919 INFO: Epoch 447: head: Default, loss=0.00169446, RMSE_E_per_atom=    0.80 meV, RMSE_F=   13.65 meV / A
+2026-09-02 23:49:51.656 INFO: Epoch 448: head: Default, loss=0.00167459, RMSE_E_per_atom=    0.56 meV, RMSE_F=   13.57 meV / A
+2026-09-02 23:49:51.658 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-444.pt
+2026-09-02 23:49:51.658 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-448.pt
+2026-09-02 23:49:54.412 INFO: Epoch 449: head: Default, loss=0.00169138, RMSE_E_per_atom=    0.97 meV, RMSE_F=   13.64 meV / A
+2026-09-02 23:49:57.139 INFO: Epoch 450: head: Default, loss=0.00170409, RMSE_E_per_atom=    0.80 meV, RMSE_F=   13.69 meV / A
+2026-09-02 23:49:59.878 INFO: Epoch 451: head: Default, loss=0.00169835, RMSE_E_per_atom=    0.73 meV, RMSE_F=   13.67 meV / A
+2026-09-02 23:50:02.606 INFO: Epoch 452: head: Default, loss=0.00169266, RMSE_E_per_atom=    0.50 meV, RMSE_F=   13.65 meV / A
+2026-09-02 23:50:05.337 INFO: Epoch 453: head: Default, loss=0.00167343, RMSE_E_per_atom=    0.62 meV, RMSE_F=   13.57 meV / A
+2026-09-02 23:50:05.338 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-448.pt
+2026-09-02 23:50:05.339 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-453.pt
+2026-09-02 23:50:08.079 INFO: Epoch 454: head: Default, loss=0.00167346, RMSE_E_per_atom=    0.76 meV, RMSE_F=   13.57 meV / A
+2026-09-02 23:50:10.809 INFO: Epoch 455: head: Default, loss=0.00168330, RMSE_E_per_atom=    0.72 meV, RMSE_F=   13.61 meV / A
+2026-09-02 23:50:13.547 INFO: Epoch 456: head: Default, loss=0.00168682, RMSE_E_per_atom=    0.88 meV, RMSE_F=   13.62 meV / A
+2026-09-02 23:50:16.283 INFO: Epoch 457: head: Default, loss=0.00168889, RMSE_E_per_atom=    0.97 meV, RMSE_F=   13.63 meV / A
+2026-09-02 23:50:19.010 INFO: Epoch 458: head: Default, loss=0.00166627, RMSE_E_per_atom=    0.66 meV, RMSE_F=   13.54 meV / A
+2026-09-02 23:50:19.012 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-453.pt
+2026-09-02 23:50:19.012 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-458.pt
+2026-09-02 23:50:21.767 INFO: Epoch 459: head: Default, loss=0.00166752, RMSE_E_per_atom=    1.00 meV, RMSE_F=   13.54 meV / A
+2026-09-02 23:50:24.510 INFO: Epoch 460: head: Default, loss=0.00165756, RMSE_E_per_atom=    0.92 meV, RMSE_F=   13.50 meV / A
+2026-09-02 23:50:24.512 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-458.pt
+2026-09-02 23:50:24.512 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-460.pt
+2026-09-02 23:50:27.264 INFO: Epoch 461: head: Default, loss=0.00165914, RMSE_E_per_atom=    0.46 meV, RMSE_F=   13.51 meV / A
+2026-09-02 23:50:29.988 INFO: Epoch 462: head: Default, loss=0.00164793, RMSE_E_per_atom=    0.95 meV, RMSE_F=   13.46 meV / A
+2026-09-02 23:50:29.989 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-460.pt
+2026-09-02 23:50:29.990 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-462.pt
+2026-09-02 23:50:32.740 INFO: Epoch 463: head: Default, loss=0.00164321, RMSE_E_per_atom=    0.49 meV, RMSE_F=   13.44 meV / A
+2026-09-02 23:50:32.742 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-462.pt
+2026-09-02 23:50:32.742 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-463.pt
+2026-09-02 23:50:35.488 INFO: Epoch 464: head: Default, loss=0.00162066, RMSE_E_per_atom=    1.02 meV, RMSE_F=   13.35 meV / A
+2026-09-02 23:50:35.490 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-463.pt
+2026-09-02 23:50:35.490 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-464.pt
+2026-09-02 23:50:38.243 INFO: Epoch 465: head: Default, loss=0.00164066, RMSE_E_per_atom=    0.50 meV, RMSE_F=   13.43 meV / A
+2026-09-02 23:50:40.974 INFO: Epoch 466: head: Default, loss=0.00163491, RMSE_E_per_atom=    1.18 meV, RMSE_F=   13.41 meV / A
+2026-09-02 23:50:43.701 INFO: Epoch 467: head: Default, loss=0.00162187, RMSE_E_per_atom=    0.67 meV, RMSE_F=   13.36 meV / A
+2026-09-02 23:50:46.422 INFO: Epoch 468: head: Default, loss=0.00161661, RMSE_E_per_atom=    0.57 meV, RMSE_F=   13.34 meV / A
+2026-09-02 23:50:46.424 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-464.pt
+2026-09-02 23:50:46.424 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-468.pt
+2026-09-02 23:50:49.171 INFO: Epoch 469: head: Default, loss=0.00161346, RMSE_E_per_atom=    0.51 meV, RMSE_F=   13.32 meV / A
+2026-09-02 23:50:49.173 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-468.pt
+2026-09-02 23:50:49.173 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-469.pt
+2026-09-02 23:50:51.919 INFO: Epoch 470: head: Default, loss=0.00162921, RMSE_E_per_atom=    1.54 meV, RMSE_F=   13.39 meV / A
+2026-09-02 23:50:54.661 INFO: Epoch 471: head: Default, loss=0.00162663, RMSE_E_per_atom=    0.92 meV, RMSE_F=   13.38 meV / A
+2026-09-02 23:50:57.392 INFO: Epoch 472: head: Default, loss=0.00163091, RMSE_E_per_atom=    0.87 meV, RMSE_F=   13.39 meV / A
+2026-09-02 23:51:00.136 INFO: Epoch 473: head: Default, loss=0.00161276, RMSE_E_per_atom=    0.64 meV, RMSE_F=   13.32 meV / A
+2026-09-02 23:51:00.137 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-469.pt
+2026-09-02 23:51:00.138 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-473.pt
+2026-09-02 23:51:02.897 INFO: Epoch 474: head: Default, loss=0.00160388, RMSE_E_per_atom=    0.80 meV, RMSE_F=   13.28 meV / A
+2026-09-02 23:51:02.899 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-473.pt
+2026-09-02 23:51:02.899 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-474.pt
+2026-09-02 23:51:05.654 INFO: Epoch 475: head: Default, loss=0.00160140, RMSE_E_per_atom=    0.76 meV, RMSE_F=   13.27 meV / A
+2026-09-02 23:51:05.655 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-474.pt
+2026-09-02 23:51:05.656 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-475.pt
+2026-09-02 23:51:08.421 INFO: Epoch 476: head: Default, loss=0.00160649, RMSE_E_per_atom=    0.49 meV, RMSE_F=   13.29 meV / A
+2026-09-02 23:51:11.161 INFO: Epoch 477: head: Default, loss=0.00161290, RMSE_E_per_atom=    1.24 meV, RMSE_F=   13.32 meV / A
+2026-09-02 23:51:14.000 INFO: Epoch 478: head: Default, loss=0.00161739, RMSE_E_per_atom=    0.76 meV, RMSE_F=   13.34 meV / A
+2026-09-02 23:51:16.776 INFO: Epoch 479: head: Default, loss=0.00161805, RMSE_E_per_atom=    0.49 meV, RMSE_F=   13.34 meV / A
+2026-09-02 23:51:19.505 INFO: Epoch 480: head: Default, loss=0.00159114, RMSE_E_per_atom=    0.70 meV, RMSE_F=   13.23 meV / A
+2026-09-02 23:51:19.506 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-475.pt
+2026-09-02 23:51:19.507 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-480.pt
+2026-09-02 23:51:22.261 INFO: Epoch 481: head: Default, loss=0.00159841, RMSE_E_per_atom=    0.88 meV, RMSE_F=   13.26 meV / A
+2026-09-02 23:51:24.995 INFO: Epoch 482: head: Default, loss=0.00158728, RMSE_E_per_atom=    0.75 meV, RMSE_F=   13.21 meV / A
+2026-09-02 23:51:24.997 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-480.pt
+2026-09-02 23:51:24.997 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-482.pt
+2026-09-02 23:51:27.750 INFO: Epoch 483: head: Default, loss=0.00158558, RMSE_E_per_atom=    0.66 meV, RMSE_F=   13.21 meV / A
+2026-09-02 23:51:27.752 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-482.pt
+2026-09-02 23:51:27.752 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-483.pt
+2026-09-02 23:51:30.504 INFO: Epoch 484: head: Default, loss=0.00159818, RMSE_E_per_atom=    0.84 meV, RMSE_F=   13.26 meV / A
+2026-09-02 23:51:33.250 INFO: Epoch 485: head: Default, loss=0.00160613, RMSE_E_per_atom=    1.56 meV, RMSE_F=   13.29 meV / A
+2026-09-02 23:51:35.999 INFO: Epoch 486: head: Default, loss=0.00161861, RMSE_E_per_atom=    0.68 meV, RMSE_F=   13.34 meV / A
+2026-09-02 23:51:38.852 INFO: Epoch 487: head: Default, loss=0.00160966, RMSE_E_per_atom=    0.84 meV, RMSE_F=   13.31 meV / A
+2026-09-02 23:51:41.720 INFO: Epoch 488: head: Default, loss=0.00160316, RMSE_E_per_atom=    0.93 meV, RMSE_F=   13.28 meV / A
+2026-09-02 23:51:44.574 INFO: Epoch 489: head: Default, loss=0.00157970, RMSE_E_per_atom=    0.69 meV, RMSE_F=   13.18 meV / A
+2026-09-02 23:51:44.575 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-483.pt
+2026-09-02 23:51:44.575 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-489.pt
+2026-09-02 23:51:47.364 INFO: Epoch 490: head: Default, loss=0.00157082, RMSE_E_per_atom=    1.01 meV, RMSE_F=   13.14 meV / A
+2026-09-02 23:51:47.366 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-489.pt
+2026-09-02 23:51:47.366 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-490.pt
+2026-09-02 23:51:50.152 INFO: Epoch 491: head: Default, loss=0.00159361, RMSE_E_per_atom=    1.05 meV, RMSE_F=   13.24 meV / A
+2026-09-02 23:51:52.920 INFO: Epoch 492: head: Default, loss=0.00157440, RMSE_E_per_atom=    0.69 meV, RMSE_F=   13.16 meV / A
+2026-09-02 23:51:55.695 INFO: Epoch 493: head: Default, loss=0.00157138, RMSE_E_per_atom=    0.45 meV, RMSE_F=   13.15 meV / A
+2026-09-02 23:51:58.463 INFO: Epoch 494: head: Default, loss=0.00154895, RMSE_E_per_atom=    0.92 meV, RMSE_F=   13.05 meV / A
+2026-09-02 23:51:58.464 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-490.pt
+2026-09-02 23:51:58.465 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-494.pt
+2026-09-02 23:52:01.256 INFO: Epoch 495: head: Default, loss=0.00154293, RMSE_E_per_atom=    0.45 meV, RMSE_F=   13.03 meV / A
+2026-09-02 23:52:01.258 DEBUG: Deleting old checkpoint file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-494.pt
+2026-09-02 23:52:01.258 DEBUG: Saving checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-495.pt
+2026-09-02 23:52:04.050 INFO: Epoch 496: head: Default, loss=0.00155940, RMSE_E_per_atom=    0.49 meV, RMSE_F=   13.10 meV / A
+2026-09-02 23:52:06.826 INFO: Epoch 497: head: Default, loss=0.00155126, RMSE_E_per_atom=    0.80 meV, RMSE_F=   13.06 meV / A
+2026-09-02 23:52:09.589 INFO: Epoch 498: head: Default, loss=0.00155158, RMSE_E_per_atom=    0.62 meV, RMSE_F=   13.06 meV / A
+2026-09-02 23:52:12.356 INFO: Epoch 499: head: Default, loss=0.00155157, RMSE_E_per_atom=    0.56 meV, RMSE_F=   13.06 meV / A
+2026-09-02 23:52:12.357 INFO: Training complete
+2026-09-02 23:52:12.357 INFO: 
+2026-09-02 23:52:12.357 INFO: ===========RESULTS===========
+2026-09-02 23:52:12.357 INFO: Loading checkpoint: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663_epoch-495.pt
+2026-09-02 23:52:12.384 INFO: Loaded Stage one model from epoch 495 for evaluation
+2026-09-02 23:52:12.384 INFO: Saving model to /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints/invariant16_05_run-59663.model
+2026-09-02 23:52:12.527 INFO: Compiling model, saving metadata to /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/model/invariant16_05_compiled.model
+2026-09-02 23:52:13.142 INFO: Computing metrics for training, validation, and test sets
+2026-09-02 23:52:13.142 INFO: Skipping evaluation for heads: ['pt_head']
+2026-09-02 23:52:13.143 INFO: Evaluating train_Default ...
+2026-09-02 23:52:14.965 INFO: Evaluating valid_Default ...
+2026-09-02 23:52:15.013 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_Default |            0.7      |         11.9     |          5.05     |
+| valid_Default |            0.5      |         13.0     |          7.08     |
++---------------+---------------------+------------------+-------------------+
+2026-09-02 23:52:15.013 DEBUG: Running inference on train_Default dataset
+2026-09-02 23:52:16.523 DEBUG: Running inference on valid_Default dataset
+2026-09-02 23:52:16.782 DEBUG: Plotting failed: label must be scalar or have the same length as the input data, but found 2 for 1 datasets.
+2026-09-02 23:52:16.786 INFO: Done

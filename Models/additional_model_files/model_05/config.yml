@@ -1,0 +1,52 @@
+# General
+                name: invariant16_05
+                seed: 59663
+
+                # Data
+                train_file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/data/train.xyz
+                valid_file: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/data/valid.xyz
+                E0s: "{1: -13.44479871561175, 2: -78.82026497397555, 3: -203.32889490923526, 4: -398.9476678874043, 5: -670.7505467717353, 6: -1029.852812546429, 7: -1485.5394904484108, 8: -2042.975987335815, 9: -2714.2417581011205, 10: -3508.7436184608446, 11: -4415.242408190776, 12: -5443.898798172279, 13: -6594.619151072571, 14: -7873.684872727564, 15: -9285.660884444838, 16: -10832.622086200296, 17: -12520.671203385575, 18: -14354.28030489181, 19: -16323.546294804388, 20: -18436.482948520596, 26: -34384.00563450578, 29: -44637.392129868334, 30: -48417.153705836645, 35: -70041.25095534947, 53: -8099.879137037657}"
+                atomic_numbers: "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 26, 29, 30, 35, 53]"
+                energy_key: TotEnergy
+                forces_key: force
+
+                # Model
+                model: MACE
+                hidden_irreps: "32x0e"
+                num_interactions: 2
+                correlation: 3
+                r_max: 5.0
+
+                # Training
+                batch_size: 4
+                valid_batch_size: 11
+                max_num_epochs: 500
+                patience: 500
+                lr: 0.01
+                swa: True
+                start_swa: 501
+                swa_energy_weight: 500
+                weight_decay: 1e-06
+
+                # Loss
+                energy_weight: 1.0
+                forces_weight: 100.0
+
+                # Optimisation
+                ema: true
+                ema_decay: 0.99
+                amsgrad: true
+
+                # Directories
+                log_dir: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/logs
+                checkpoints_dir: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/checkpoints
+                results_dir: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/results
+                model_dir: /home/l/lbelzko/summer_project/benchmark_runs/1564559_10/committee/iter15/model_05/model
+
+                # Misc
+                default_dtype: float32
+                device: cuda
+                restart_latest: false
+                num_workers: 0
+                scheduler_patience: 50
+                
