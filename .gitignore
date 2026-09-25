@@ -1,0 +1,4 @@
+__pycache__
+.venv/
+neb_runs/*
+!neb_runs/.gitkeep
