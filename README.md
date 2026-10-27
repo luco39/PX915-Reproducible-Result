@@ -59,8 +59,8 @@ command = [
 ]
 ```
 
-You can try playing around with some of these settings. One suggestion could be to alter the value of `k-const`, as it was noted in the report that even a small change to this value can greatly impact the convergence behaviour of the NEB. Other parameters that could influence this are `climbing-image` and `use-vark` - to turn these off, just remove the flags
+You can try playing around with some of these settings. One suggestion could be to alter the value of `k-const`, as it was noted in the report that even a small change to this value can greatly impact the convergence behaviour of the NEB. Other parameters that could influence this are `climbing-image` (turned off with the flag `--no-climbing-image`) and `use-vark` (turned off by deleting this flag).
 
-The other parameters are not actually that interesting to change
+The other parameters are not actually that interesting to change.
 
 
